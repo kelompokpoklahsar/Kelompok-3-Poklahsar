@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rencana Usaha Bersama (RUB)</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f7fc;
+}
+
+header{
+background:#2952cc;
+color:white;
+padding:20px;
+text-align:center;
+position: relative; /* Menambahkan posisi relatif untuk penempatan tombol */
+}
+
+/* Gaya untuk tombol kembali (diperbarui agar mendukung elemen button) */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #5a7ee0; /* Warna yang sedikit berbeda */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s ease;
+    border: none;      /* Menghilangkan border bawaan button */
+    cursor: pointer;    /* Mengubah kursor menjadi telunjuk */
+    font-size: 14px;
+}
+
+.back-button:hover {
+    background: #4a6ecb;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:30px;
+}
+
+.hero{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+margin-bottom:25px;
+}
+
+.hero h2{
+color:#2952cc;
+margin-bottom:15px;
+}
+
+.hero p{
+line-height:1.8;
+text-align:justify;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card i{
+font-size:40px;
+color:#2952cc;
+margin-bottom:15px;
+}
+
+.card h3{
+margin-bottom:10px;
+color:#2952cc;
+}
+
+.card p{
+margin-bottom:15px;
+line-height:1.6;
+}
+
+.btn{
+display:inline-block;
+padding:12px 20px;
+background:#2952cc;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.btn:hover{
+background:#1e3f9e;
+}
+
+.footer{
+text-align:center;
+padding:20px;
+margin-top:30px;
+color:#666;
+position: relative; /* Menambahkan posisi relatif untuk penempatan tombol */
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+/* Tombol kembali di footer */
+.footer .back-button {
+    position: static; /* Mengatur kembali posisi statis agar tidak absolute terhadap footer */
+    margin-top: 20px; /* Memberi sedikit jarak dari teks footer */
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<button onclick="kembaliKeAsal()" class="back-button">
+    <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+</button>
+<h1>Rencana Usaha Bersama (RUB)</h1>
+<p>Sistem Informasi Kelompok Pengolah dan Pemasar Hasil Perikanan</p>
+</header>
+
+<div class="container">
+
+<div class="hero">
+<h2>Rencana Usaha Bersama Kelompok</h2>
+
+<p>
+Halaman ini digunakan untuk mengelola kegiatan Rencana Usaha Bersama (RUB),
+mulai dari pendaftaran anggota usaha, survei tingkat kepuasan,
+monitoring hasil kegiatan melalui Google Spreadsheet,
+visualisasi data menggunakan Looker Studio,
+hingga analisis data yang dapat diunduh dalam format Microsoft Excel.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<i class="fas fa-file-signature"></i>
+<h3>Google Form Pendaftaran</h3>
+<p>
+Formulir pendaftaran anggota atau peserta kegiatan usaha bersama.
+</p>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSeBlDASR4Hx2Af7iI6gbOK1oucGMKhWaTMCT78VXl8-hp4fww/viewform?usp=header"
+target="_blank"
+class="btn">
+Buka Form
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-table"></i>
+<h3>Data Pendaftaran</h3>
+<p>
+Melihat hasil pengisian formulir pendaftaran yang tersimpan pada Google Spreadsheet.
+</p>
+
+<a href="https://docs.google.com/spreadsheets/d/18YCnZiPHENjpNQ3xfJeO9GJBFX0KwlwSPXFru06EHGM/edit?usp=sharing"
+target="_blank"
+class="btn">
+Lihat Spreadsheet
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-star"></i>
+<h3>Survey Kepuasan</h3>
+<p>
+Formulir penilaian tingkat kepuasan anggota terhadap kegiatan kelompok.
+</p>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdB-J9fVKTgkqzGrwAzztotSV2MJbKHHbmYR54mPh3cM4w/viewform?usp=header"
+target="_blank"
+class="btn">
+Isi Survey
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-chart-bar"></i>
+<h3>Hasil Survey Kepuasan</h3>
+<p>
+Melihat data hasil survey kepuasan yang tersimpan secara otomatis.
+</p>
+
+<a href="https://docs.google.com/spreadsheets/d/1EP1MjYuJBQZgA1tpaR1QwM6tNk1NID2kG2pQ1YEbJmU/edit?usp=sharing"
+target="_blank"
+class="btn">
+Lihat Hasil
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-chart-pie"></i>
+<h3>Dashboard Looker Studio</h3>
+<p>
+Visualisasi data pendaftaran dan tingkat kepuasan dalam bentuk dashboard interaktif.
+</p>
+
+<a href="https://datastudio.google.com/embed/reporting/c4254422-2f42-48a3-bd88-c809ef236733/page/page_12345"
+target="_blank"
+class="btn">
+Buka Dashboard
+</a>
+</div>
+
+  <div class="card">
+<i class="fas fa-chart-pie"></i>
+<h3>Dashboard Looker Studio</h3>
+<p>
+Visualisasi data pendaftaran dan tingkat kepuasan dalam bentuk dashboard interaktif.
+</p>
+
+<a href="https://datastudio.google.com/embed/reporting/e1cd4628-a4b5-4b14-90fb-8956dded3226/page/page_12345"
+target="_blank"
+class="btn">
+Buka Dashboard
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-file-excel"></i>
+<h3>Analisis Data Excel</h3>
+<p>
+Unduh file hasil analisis data yang telah diolah menggunakan Microsoft Excel.
+</p>
+
+<a href="https://docs.google.com/spreadsheets/d/1guba_mSOUK53wBRIijT11_MNoI8ZbREl/edit?usp=sharing&ouid=101206049725368087904&rtpof=true&sd=true"
+download
+class="btn">
+Download Excel
+</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 Sistem Informasi POKLAHSAR | Rencana Usaha Bersama (RUB)
+<br>
+<button onclick="kembaliKeAsal()" class="back-button">
+    <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+</button>
+</div>
+
+<script>
+function kembaliKeAsal() {
+    // 1. Cek URL halaman asal tempat user mengklik link ini (Beda repo/file tetap terlacak)
+    if (document.referrer) {
+        window.location.href = document.referrer;
+    } 
+    // 2. Jika enkripsi privasi browser menyembunyikan referrer, gunakan history back
+    else if (history.length > 1) {
+        history.back();
+    } 
+    // 3. Jika dibuka langsung tanpa ada riwayat klik sebelumnya, munculkan pemberitahuan/tutup tab
+    else {
+        alert("Tidak ada halaman sebelumnya untuk kembali.");
+        window.close();
+    }
+}
+</script>
+
+</body>
+</html>
