@@ -1,1 +1,496 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sistem Informasi POKLAHSAR</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#eef3fa;
+display:flex;
+}
+
+/* ======================
+SIDEBAR
+====================== */
+
+.sidebar{
+width:280px;
+height:100vh;
+background:#0b5ed7;
+color:white;
+position:fixed;
+overflow-y:auto;
+}
+
+.logo{
+padding:25px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.logo h2{
+font-size:24px;
+margin-bottom:5px;
+}
+
+.logo p{
+font-size:13px;
+opacity:.85;
+line-height:1.5;
+}
+
+.menu{
+padding:15px;
+}
+
+.menu ul{
+list-style:none;
+}
+
+.menu li{
+margin-bottom:5px;
+}
+
+.menu a{
+display:block;
+padding:12px 15px;
+color:white;
+text-decoration:none;
+border-radius:8px;
+transition:.3s;
+}
+
+.menu a:hover{
+background:rgba(255,255,255,.15);
+}
+
+/* SUB MENU */
+
+.submenu{
+display:none;
+margin-left:15px;
+margin-top:5px;
+}
+
+.submenu li{
+margin-bottom:4px;
+}
+
+.submenu a{
+display:block;
+padding:10px 12px;
+font-size:14px;
+background:rgba(255,255,255,.08);
+border-radius:6px;
+}
+
+.submenu a:hover{
+background:rgba(255,255,255,.18);
+}
+
+/* ======================
+MAIN
+====================== */
+
+.main{
+margin-left:280px;
+width:calc(100% - 280px);
+}
+
+/* ======================
+TOPBAR
+====================== */
+
+.topbar{
+background:white;
+padding:18px 25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.topbar h2{
+color:#0b5ed7;
+}
+
+.content{
+padding:25px;
+}
+
+/* ======================
+HERO
+====================== */
+
+.hero{
+background:#fff;
+padding:15px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+margin-bottom:20px;
+}
+
+.hero img{
+width:100%;
+height:390px;
+object-fit:cover;
+object-position:center top;
+display:block;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.hero-content{
+padding:0 10px 10px;
+}
+
+.hero-content h2{
+color:#1565d8;
+font-size:24px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.hero-content p{
+font-size:16px;
+line-height:1.8;
+color:#555;
+text-align:justify;
+margin-bottom:10px;
+}
+
+.footer{
+padding:20px;
+text-align:center;
+color:#666;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+body{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+height:auto;
+position:relative;
+}
+
+.main{
+margin-left:0;
+width:100%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<h2>POKLAHSAR</h2>
+
+<p>
+Kelompok Pengolah dan Pemasar Hasil Perikanan
+</p>
+
+</div>
+
+<div class="menu">
+
+<ul>
+
+<!-- MENU -->
+
+<li>
+
+<a href="index.html">
+
+<i class="fas fa-home"></i>
+ Menu
+
+</a>
+
+</li>
+
+<!-- INDIVIDU -->
+
+<li>
+
+<a href="#"
+onclick="toggleMenu('individuMenu',this);return false;">
+
+<i class="fas fa-user"></i>
+ Individu
+
+<span style="float:right;">
+<i class="fas fa-chevron-down"></i>
+</span>
+
+</a>
+
+<ul id="individuMenu" class="submenu">
+
+<a href="#"
+onclick="toggleMenu('bukuMenu',this);return false;">
+
+<i class="fas fa-book"></i>
+ Buku
+
+<span style="float:right;">
+<i class="fas fa-chevron-down"></i>
+</span>
+
+</a>
+
+<ul id="bukuMenu" class="submenu level2">
+
+<li>
+<a href="tamukelompok.html">
+Tamu Kelompok & Agenda Surat
+</a>
+</li>
+
+<li>
+<a href="kaskelompok.html">
+Kas Kelompok
+</a>
+</li>
+
+<li>
+<a href="notulenrapat.html">
+Notulen Rapat
+</a>
+</li>
+
+<li>
+<a href="ruk.html">
+RUK
+</a>
+</li>
+
+<li>
+<a href="rub.html">
+RUB
+</a>
+</li>
+
+</ul>
+
+</li>
+ 
+<li><a href="rencanakegiatan.html">
+Rencana Kegiatan
+</a></li>
+
+<li><a href="produksikelompok.html">
+Produksi Kelompok & Pola Produksi
+</a></li>
+
+<li><a href="inventarisbarang.html">
+Inventaris Barang
+</a></li>
+
+<li><a href="iurankelompok.html">
+Iuran Kelompok
+</a></li>
+
+<li><a href="pinjamananggota.html">
+Pinjaman Anggota
+</a></li>
+
+</ul>
+
+</li>
+
+<!-- KELOMPOK -->
+
+<li>
+
+<a href="#"
+onclick="toggleMenu('kelompokMenu',this);return false;">
+
+<i class="fas fa-users"></i>
+ Kelompok
+
+<span style="float:right;">
+<i class="fas fa-chevron-down"></i>
+</span>
+
+</a>
+
+<ul id="kelompokMenu" class="submenu">
+
+<li>
+<a href="sejarahkelompok.html">
+Sejarah Kelompok
+</a>
+</li>
+
+<li>
+<a href="datadasarkelompok.html">
+Data Dasar Kelompok
+</a>
+</li>
+
+<li>
+<a href="dataanggotakelompok.html">
+Data Anggota Kelompok
+</a>
+</li>
+
+<li>
+<a href="datakomoditasperikanan.html">
+Data Komoditas Perikanan
+</a>
+</li>
+
+</ul>
+
+</li>
+
+<!-- HASIL DATA KELOMPOK -->
+
+<li>
+
+<a href="hasildatakelompok.html">
+
+<i class="fas fa-chart-bar"></i>
+ Hasil Data Kelompok
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<div class="topbar">
+
+<h2>Sistem Informasi POKLAHSAR</h2>
+
+<div>
+
+<i class="fas fa-user-circle"></i>
+
+Sosial Ekonomi Perikanan
+
+</div>
+
+</div>
+
+<div class="content">
+
+<!-- HERO -->
+
+<div class="hero">
+
+<img src="fpik.jpg"
+alt="POKLAHSAR">
+
+<div class="hero-content">
+
+<h2>
+Selamat Datang di Sistem Informasi POKLAHSAR
+</h2>
+
+<p>
+POKLAHSAR (Kelompok Pengolah dan Pemasar Hasil Perikanan)
+merupakan kelompok masyarakat yang bergerak dalam kegiatan
+pengolahan dan pemasaran hasil perikanan untuk meningkatkan
+nilai tambah produk, memperluas pasar, dan meningkatkan
+kesejahteraan anggota kelompok.
+</p>
+
+<p>
+Aplikasi ini digunakan untuk membantu pengelolaan
+administrasi kelompok, data anggota, keuangan, produksi,
+inventaris, pertemuan, pemasaran, serta penyusunan dokumen
+usaha secara digital sehingga lebih efektif, efisien,
+dan transparan.
+</p>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+© 2026 Sistem Informasi POKLAHSAR |
+Fakultas Perikanan dan Ilmu Kelautan
+
+</div>
+
+</div>
+<!-- END CONTENT -->
+
+</div>
+<!-- END MAIN -->
+
+<script>
+
+function toggleMenu(menuId, element){
+
+    const menu =
+    document.getElementById(menuId);
+
+    const icon =
+    element.querySelector("i.fa-chevron-down, i.fa-chevron-up");
+
+    if(menu.style.display === "block"){
+
+        menu.style.display = "none";
+
+        icon.classList.remove("fa-chevron-up");
+        icon.classList.add("fa-chevron-down");
+
+    }else{
+
+        menu.style.display = "block";
+
+        icon.classList.remove("fa-chevron-down");
+        icon.classList.add("fa-chevron-up");
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
 
