@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simpan Pinjam Anggota - POKLAHSAR</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+body{
+    background:#f4f7fc;
+}
+/* HEADER */
+header{
+    background:#2952cc;
+    color:white;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+header h1{
+    font-size:30px;
+    margin-bottom:8px;
+}
+header p{
+    opacity:.9;
+}
+/* CONTAINER */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
+}
+.section-title{
+    text-align:center;
+    color:#2952cc;
+    margin-bottom:30px;
+    font-size:28px;
+}
+/* CARD */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+.card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+.card a{
+    text-decoration:none;
+    color:#333;
+    display:block;
+}
+.card i{
+    font-size:40px;
+    color:#2952cc;
+    margin-bottom:15px;
+}
+.card h3{
+    color:#2952cc;
+    margin-bottom:10px;
+}
+.card p{
+    color:#666;
+    line-height:1.6;
+}
+/* INFO */
+.info{
+    background:white;
+    margin-top:35px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+.info h2{
+    color:#2952cc;
+    margin-bottom:15px;
+}
+.info p{
+    text-align:justify;
+    line-height:1.8;
+    color:#555;
+}
+/* FOOTER */
+footer{
+    margin-top:40px;
+    background:#2952cc;
+    color:white;
+    text-align:center;
+    padding:18px;
+}
+@media(max-width:768px){
+    header h1{
+        font-size:24px;
+    }
+    .section-title{
+        font-size:22px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1><i class="fas fa-wallet"></i> Simpan Pinjam Anggota POKLAHSAR</h1>
+    <p>Sistem Informasi Kelompok Pengolah dan Pemasar Hasil Perikanan</p>
+</header>
+
+<div class="container">
+    <h2 class="section-title">Menu Data Simpan Pinjam</h2>
+    
+    <div class="cards">
+
+        <div class="card">
+            <a href="https://forms.gle/SVU4L2kc4JeXphMfA" target="_blank">
+                <i class="fas fa-user-plus"></i>
+                <h3>Form Pendaftaran</h3>
+                <p>Google Form pendaftaran simpan pinjam anggota.</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://docs.google.com/spreadsheets/d/1xkkW0MT_WndFe1zq9aDmquDkALTPnsM-vXsUQECYGmM/edit?usp=sharing" target="_blank">
+                <i class="fas fa-file-excel"></i>
+                <h3>Data Pendaftaran</h3>
+                <p>Hasil spreadsheet pendaftaran simpan pinjam.</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://datastudio.google.com/reporting/6995eabe-d8fe-48eb-87cb-c32c4c0bf9e7" target="_blank">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Dashboard Looker Studio</h3>
+                <p>Visualisasi data pendaftaran melalui Looker Studio.</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://forms.gle/jDrarFrtbcEn9kAc9" target="_blank">
+                <i class="fas fa-star"></i>
+                <h3>Survei Kepuasan</h3>
+                <p>Form tingkat kepuasan layanan simpan pinjam.</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://docs.google.com/spreadsheets/d/15VXtdYKqxzrwvmAMjjYeTardwSK3BtnH74FnkrKn4K8/edit?usp=sharing" target="_blank">
+                <i class="fas fa-table"></i>
+                <h3>Data Survey Kepuasan</h3>
+                <p>Data hasil pengisian survei kepuasan.</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://datastudio.google.com/reporting/42bad7b9-47dd-4825-9d78-8dae41d13904" target="_blank">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Dashboard Kepuasan</h3>
+                <p>Analisis dan visualisasi hasil survei kepuasan.</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://docs.google.com/spreadsheets/d/1fiwfP9m6EPaaA5MUommdlJjq8MmTcdPS/edit?usp=sharing" target="_blank">
+                <i class="fas fa-file-lines"></i>
+                <h3>Hasil Analisis</h3>
+                <p>Rekapitulasi dan hasil analisis keseluruhan.</p>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="info">
+        <h2>Tentang Sistem</h2>
+        <p>
+            Halaman ini digunakan untuk mengelola data Simpan Pinjam Anggota POKLAHSAR 
+            melalui pengelolaan pendaftaran, survei kepuasan, penyimpanan data spreadsheet,
+            serta visualisasi hasil analisis menggunakan Looker Studio.
+        </p>
+    </div>
+</div>
+
+<footer>
+    ©️ 2026 Noer Mayadha | Sistem Informasi POKLAHSAR
+</footer>
+
+</body>
+</html>
