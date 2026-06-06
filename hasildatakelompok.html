@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hasil Data Kelompok | POKLAHSAR</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#eef3fa;
+display:flex;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:280px;
+height:100vh;
+background:#0b5ed7;
+color:white;
+position:fixed;
+overflow-y:auto;
+}
+
+.logo{
+padding:25px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.logo h2{
+font-size:24px;
+margin-bottom:5px;
+}
+
+.logo p{
+font-size:13px;
+opacity:.8;
+line-height:1.5;
+}
+
+.back-menu{
+padding:15px;
+border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.back-menu a{
+display:flex;
+align-items:center;
+gap:12px;
+background:rgba(255,255,255,.15);
+padding:14px 18px;
+border-radius:12px;
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.back-menu a:hover{
+background:rgba(255,255,255,.25);
+}
+
+/* MAIN */
+
+.main{
+margin-left:280px;
+width:calc(100% - 280px);
+}
+
+.topbar{
+background:white;
+padding:18px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.topbar h2{
+color:#0b5ed7;
+font-size:34px;
+}
+
+.topbar-user{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:15px;
+font-weight:600;
+color:#333;
+}
+
+.topbar-user i{
+font-size:22px;
+color:#0b5ed7;
+}
+
+.content{
+padding:25px;
+}
+
+.page-header{
+margin-bottom:25px;
+}
+
+.page-header h2{
+font-size:32px;
+color:#0b5ed7;
+margin-bottom:8px;
+}
+
+.page-header p{
+color:#666;
+font-size:16px;
+}
+
+/* CARD */
+
+.card{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+margin-bottom:25px;
+}
+
+.card h3{
+color:#0b5ed7;
+margin-bottom:20px;
+font-size:26px;
+}
+
+/* STATISTIK */
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-bottom:25px;
+}
+
+.stat-card{
+background:white;
+padding:25px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.stat-card i{
+font-size:40px;
+color:#0b5ed7;
+margin-bottom:15px;
+}
+
+.stat-card h4{
+color:#666;
+margin-bottom:10px;
+}
+
+.stat-card h2{
+color:#0b5ed7;
+}
+
+/* FORM */
+
+.form-links{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+
+.form-card{
+background:#f8faff;
+border:2px solid #dbe6ff;
+border-radius:15px;
+padding:30px;
+text-align:center;
+}
+
+.form-card h4{
+color:#0b5ed7;
+margin-bottom:15px;
+font-size:24px;
+}
+
+.form-card p{
+color:#666;
+line-height:1.7;
+margin-bottom:20px;
+}
+
+.btn-form,
+.btn-sheet,
+.btn-excel{
+display:inline-block;
+padding:12px 25px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-weight:600;
+}
+
+.btn-form{
+background:#0b5ed7;
+}
+
+.btn-sheet{
+background:#28a745;
+}
+
+.btn-excel{
+background:#1d6f42;
+}
+
+.dashboard-placeholder{
+height:450px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#f8faff;
+border:2px dashed #d6e4ff;
+border-radius:15px;
+font-size:22px;
+color:#666;
+}
+
+@media(max-width:768px){
+
+.sidebar{
+width:100%;
+height:auto;
+position:relative;
+}
+
+.main{
+margin-left:0;
+width:100%;
+}
+
+.form-links{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+<h2>POKLAHSAR</h2>
+<p>Kelompok Pengolah dan Pemasar Hasil Perikanan</p>
+</div>
+
+<div class="back-menu">
+<a href="index.html">
+<i class="fas fa-arrow-left"></i>
+<span>Kembali ke Menu</span>
+</a>
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="topbar">
+
+<h2>Hasil Data Kelompok</h2>
+
+<div class="topbar-user">
+<i class="fas fa-user-circle"></i>
+<span>Kelompok 3</span>
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="page-header">
+
+<h2>📋 Hasil Data Kelompok</h2>
+
+<p>
+Pengelolaan data kelompok, anggota, komoditas perikanan,
+serta evaluasi Sistem Informasi POKLAHSAR.
+</p>
+
+</div>
+
+<!-- STATISTIK -->
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<i class="fas fa-users"></i>
+<h4>Data Kelompok</h4>
+<h2>POKLAHSAR</h2>
+</div>
+
+<div class="stat-card">
+<i class="fas fa-user-friends"></i>
+<h4>Data Anggota</h4>
+<h2>Aktif</h2>
+</div>
+
+<div class="stat-card">
+<i class="fas fa-fish"></i>
+<h4>Komoditas</h4>
+<h2>Perikanan</h2>
+</div>
+
+<div class="stat-card">
+<i class="fas fa-star"></i>
+<h4>Evaluasi Sistem</h4>
+<h2>Kepuasan</h2>
+</div>
+
+</div>
+
+<!-- FORM DAN DATA KELOMPOK -->
+
+<div class="card">
+
+<h3>
+<i class="fas fa-folder-open"></i>
+ Form dan Data Kelompok
+</h3>
+
+<div class="form-links">
+
+<!-- FORM PENDAFTARAN -->
+
+<div class="form-card">
+
+<h4>
+<i class="fas fa-file-signature"></i>
+Form Pendaftaran Kelompok
+</h4>
+
+<p>
+Input data kelompok, anggota,
+dan komoditas perikanan.
+</p>
+
+<a href="https://forms.gle/JRAP2sPesYy9ApdPA"
+class="btn-form"
+target="_blank">
+
+<i class="fas fa-external-link-alt"></i>
+ Buka Form
+
+</a>
+
+</div>
+
+<!-- HASIL DATA -->
+
+<div class="form-card">
+
+<h4>
+<i class="fas fa-table"></i>
+Hasil Data Kelompok
+</h4>
+
+<p>
+Lihat hasil pengisian data kelompok,
+anggota, dan komoditas perikanan.
+</p>
+
+<a href="https://docs.google.com/spreadsheets/d/1D1XWFnzERbNW0BZbK5YfnuRpY4hymJb_eJC9LNegZH0/edit?usp=sharing"
+class="btn-sheet"
+target="_blank">
+
+<i class="fas fa-table"></i>
+ Lihat Data
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TINGKAT KEPUASAN -->
+
+<div class="card">
+
+<h3>
+<i class="fas fa-smile"></i>
+ Tingkat Kepuasan Sistem Informasi POKLAHSAR
+</h3>
+
+<div class="form-links">
+
+<div class="form-card">
+
+<h4>
+<i class="fas fa-clipboard-check"></i>
+Form Tingkat Kepuasan
+</h4>
+
+<p>
+Berikan penilaian terhadap
+layanan Sistem Informasi POKLAHSAR.
+</p>
+
+<a href="https://forms.gle/xVM5dooQeRFJxdbT8"
+class="btn-form"
+target="_blank">
+
+<i class="fas fa-external-link-alt"></i>
+ Buka Form
+
+</a>
+
+</div>
+
+<div class="form-card">
+
+<h4>
+<i class="fas fa-table"></i>
+Hasil Tingkat Kepuasan
+</h4>
+
+<p>
+Lihat hasil penilaian pengguna
+terhadap Sistem Informasi POKLAHSAR.
+</p>
+
+<a href="https://docs.google.com/spreadsheets/d/1bD5gjZcefPRkC5hXqzsrpJNG_MHLVB11MAZ_S3rpB0k/edit?usp=sharing"
+class="btn-sheet"
+target="_blank">
+
+<i class="fas fa-table"></i>
+ Lihat Hasil
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- DASHBOARD DATA KELOMPOK -->
+
+<div class="card">
+
+<h3>
+<i class="fas fa-chart-pie"></i>
+ Dashboard Data Kelompok
+</h3>
+
+<p style="margin-bottom:20px;color:#666;">
+
+Visualisasi data kelompok, anggota,
+dan komoditas perikanan POKLAHSAR.
+
+</p>
+
+<iframe
+class="looker-container"
+src="LINK_LOOKER_STUDIO"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<!-- DASHBOARD KEPUASAN -->
+
+<div class="card">
+
+<h3>
+<i class="fas fa-chart-line"></i>
+ Dashboard Tingkat Kepuasan
+</h3>
+
+<p style="margin-bottom:20px;color:#666;">
+
+Visualisasi hasil evaluasi pengguna
+terhadap Sistem Informasi POKLAHSAR.
+
+</p>
+
+<iframe
+class="looker-container"
+src="LINK_LOOKER_STUDIO"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<!-- DOWNLOAD ANALISIS -->
+
+<div class="card">
+
+<h3>
+<i class="fas fa-file-excel"></i>
+ Download Hasil Analisis Kelompok POKLAHSAR
+</h3>
+
+<p style="margin-bottom:20px;color:#666;">
+
+Download hasil analisis data kelompok
+dan evaluasi Sistem Informasi POKLAHSAR
+dalam format Microsoft Excel.
+
+</p>
+
+<a href="hasilanalisiskelompok.xlsx"
+class="btn-excel"
+target="_blank">
+
+<i class="fas fa-download"></i>
+ Download Hasil Analisis
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
