@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Produksi Kelompok dan Pola Produksi POKLAHSAR</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+/* HEADER */
+
+header{
+    background:#2952cc;
+    color:white;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+header h1{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+header p{
+    opacity:.9;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+.section-title{
+    text-align:center;
+    color:#2952cc;
+    margin-bottom:30px;
+    font-size:28px;
+}
+
+/* CARD */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.card a{
+    text-decoration:none;
+    color:#333;
+    display:block;
+}
+
+.card i{
+    font-size:40px;
+    color:#2952cc;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#2952cc;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+    line-height:1.6;
+}
+
+/* INFO */
+
+.info{
+    background:white;
+    margin-top:35px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.info h2{
+    color:#2952cc;
+    margin-bottom:15px;
+}
+
+.info p{
+    text-align:justify;
+    line-height:1.8;
+    color:#555;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:40px;
+    background:#2952cc;
+    color:white;
+    text-align:center;
+    padding:18px;
+}
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:24px;
+    }
+
+    .section-title{
+        font-size:22px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1><i class="fas fa-chart-line"></i> Produksi Kelompok dan Pola Produksi POKLAHSAR</h1>
+    <p>Sistem Informasi Kelompok Pengolah dan Pemasar Hasil Perikanan</p>
+</header>
+
+<div class="container">
+
+    <h2 class="section-title">Menu Data dan Analisis</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <a href="https://forms.gle/jB4ibUUPaMyZehUi6" target="_blank">
+                <i class="fas fa-user-plus"></i>
+                <h3>Pendaftaran Keanggotaan</h3>
+                <p>Google Form pendaftaran anggota POKLAHSAR.</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://docs.google.com/spreadsheets/d/1ziD6q8bCn7lLQxY4_SE6ArjyeO2v6FH9W4tVb8BD4Vs/edit?usp=sharing" target="_blank">
+                <i class="fas fa-file-excel"></i>
+                <h3>Spreadsheet Pendaftaran</h3>
+                <p>Data hasil pendaftaran anggota yang telah masuk.</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://datastudio.google.com/reporting/12e39d69-f2c0-42c6-a080-e957cd9122a4" target="_blank">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Dashboard Pendaftaran</h3>
+                <p>Visualisasi data pendaftaran anggota melalui Looker Studio.</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://forms.gle/kaVVy3EbeY136JFL8" target="_blank">
+                <i class="fas fa-star"></i>
+                <h3>Survei Kepuasan</h3>
+                <p>Form tingkat kepuasan terhadap fitur produksi kelompok dan pola produksi.</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://docs.google.com/spreadsheets/d/1ndY4roc9JOvodIEFsk_odHkzx8O_cu9HH6SC8QUNk8I/edit?usp=sharing" target="_blank">
+                <i class="fas fa-table"></i>
+                <h3>Spreadsheet Kepuasan</h3>
+                <p>Data hasil pengisian survei kepuasan pengguna.</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://datastudio.google.com/reporting/98467286-ecd8-4b04-a8c3-639013e1b703" target="_blank">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Dashboard Kepuasan</h3>
+                <p>Analisis dan visualisasi hasil survei kepuasan.</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://docs.google.com/spreadsheets/d/1k7QqvcXNHQ98GtpBWpWNwTx_SZU-NTsm/edit?usp=drive_link&ouid=107465127561835698914&rtpof=true&sd=true" target="_blank">
+                <i class="fas fa-file-lines"></i>
+                <h3>Hasil Analisis Keseluruhan</h3>
+                <p>Rekapitulasi dan hasil analisis seluruh data penelitian.</p>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="info">
+        <h2>Tentang Sistem</h2>
+        <p>
+            Halaman ini digunakan untuk mendukung kegiatan Produksi Kelompok dan Pola Produksi POKLAHSAR
+            melalui pengelolaan data pendaftaran anggota, survei kepuasan, penyimpanan data spreadsheet,
+            serta visualisasi hasil analisis menggunakan Looker Studio. Sistem ini membantu proses
+            administrasi dan evaluasi kegiatan secara digital, cepat, dan terintegrasi.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Khaila Nazila Shofa 
+</footer>
+
+</body>
+</html>
