@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventaris Barang POKLAHSAR</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f7fc;
+}
+
+.header{
+background:#2952cc;
+color:white;
+padding:30px;
+text-align:center;
+box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+.header h1{
+margin-bottom:10px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:25px;
+}
+
+/* Style Tambahan untuk Tombol Kembali */
+.btn-back {
+background:#6c757d;
+margin-bottom:20px;
+cursor:pointer;
+border:none;
+font-size:15px;
+font-weight:600;
+display:inline-flex;
+align-items:center;
+gap:8px;
+}
+
+.btn-back:hover {
+background:#5a6268;
+transform:translateY(-2px);
+}
+
+.card{
+background:white;
+padding:25px;
+margin-bottom:20px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h2{
+color:#2952cc;
+margin-bottom:10px;
+}
+
+.card p{
+color:#555;
+line-height:1.7;
+margin-bottom:15px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 20px;
+background:#2952cc;
+color:white;
+text-decoration:none;
+border-radius:8px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#1f43a5;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+table th{
+background:#2952cc;
+color:white;
+padding:12px;
+}
+
+table td{
+padding:12px;
+border:1px solid #ddd;
+}
+
+.footer{
+text-align:center;
+padding:20px;
+color:#666;
+margin-top:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="header">
+<h1><i class="fas fa-boxes"></i> Inventaris Kelompok POKLAHSAR</h1>
+<p>Sistem Inventaris, Pendaftaran, Kepuasan dan Analisis Data Kelompok</p>
+</div>
+
+<div class="container">
+
+<button onclick="kembaliKeAsal()" class="btn btn-back">
+<i class="fas fa-arrow-left"></i> Kembali
+</button>
+
+<div class="card">
+
+<h2>Daftar Inventaris Kelompok</h2>
+
+<table>
+<tr>
+<th>No</th>
+<th>Nama Barang</th>
+<th>Jumlah</th>
+<th>Kondisi</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Freezer</td>
+<td>2 Unit</td>
+<td>Baik</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Vacuum Sealer</td>
+<td>1 Unit</td>
+<td>Baik</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Timbangan Digital</td>
+<td>2 Unit</td>
+<td>Baik</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Kompor Gas</td>
+<td>1 Unit</td>
+<td>Baik</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Tabung Gas</td>
+<td>2 Unit</td>
+<td>Baik</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Wajan Penggorengan</td>
+<td>2 Unit</td>
+<td>Baik</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Pisau Fillet</td>
+<td>3 Unit</td>
+<td>Baik</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Meja Pengolahan</td>
+<td>1 Unit</td>
+<td>Baik</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>cool box</td>
+<td>2 Unit</td>
+<td>Baik</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Rak Penyimpanan</td>
+<td>1 Unit</td>
+<td>Baik</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h2><i class="fas fa-file-signature"></i> Form Pendaftaran</h2>
+<p>Silakan mengisi formulir pendaftaran inventaris kelompok.</p>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdfoK9W0roppqbj3ZMwUZ1YteplSVwzhKkrRK0zbcZ0bm7Nbw/viewform?usp=header"
+target="_blank"
+class="btn">
+Buka Google Form
+</a>
+</div>
+
+<div class="card">
+<h2><i class="fas fa-table"></i> Data Pendaftaran</h2>
+<p>Hasil formulir tersimpan otomatis pada Google Spreadsheet.</p>
+
+<a href="https://docs.google.com/spreadsheets/d/1U5XXR1hIbytXS989xaBJlJ9Djr-29xzAHM0yLD0LdoU/edit?usp=sharing"
+target="_blank"
+class="btn">
+Buka Spreadsheet
+</a>
+</div>
+
+<div class="card">
+<h2><i class="fas fa-star"></i> Form Kepuasan</h2>
+<p>Isi survei kepuasan pengguna sistem inventaris kelompok.</p>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfcU1zAS3bDvbLlzkXFQ9D9_Fn0-Qz9hulklYZNTTIVbETo_Q/viewform?usp=header"
+target="_blank"
+class="btn">
+Isi Survei
+</a>
+</div>
+
+<div class="card">
+<h2><i class="fas fa-chart-bar"></i> Data Kepuasan</h2>
+<p>Lihat hasil tanggapan survei kepuasan.</p>
+
+<a href="https://docs.google.com/spreadsheets/d/1SXEjFN5TxASeD5mK9HdqEr1-ZXfuqK0HWGp3r_uKSC0/edit?usp=sharing"
+target="_blank"
+class="btn">
+Lihat Data
+</a>
+</div>
+
+<div class="card">
+<h2><i class="fas fa-chart-line"></i> Dashboard Looker Studio</h2>
+<p>Visualisasi data inventaris.</p>
+
+<a href="https://datastudio.google.com/reporting/49e5a4d0-00f5-4c19-af50-808d96c68936"
+target="_blank"
+class="btn">
+Buka Dashboard
+</a>
+</div>
+
+<div class="card">
+<h2><i class="fas fa-chart-line"></i> Dashboard Looker Studio</h2>
+<p>Visualisasi kepuasan pengguna.</p>
+
+<a href="https://datastudio.google.com/reporting/5ed2aa3d-3bac-4157-bee5-ca29e6670855"
+target="_blank"
+class="btn">
+Buka Dashboard
+</a>
+</div>
+
+<div class="card">
+<h2><i class="fas fa-file-excel"></i> Hasil Analisis Excel</h2>
+<p>Download hasil analisis dalam format Excel.</p>
+
+<a href="https://docs.google.com/spreadsheets/d/1MJtez_2hyEgFSUgoOuXE2iuheNd5MTnP/edit?usp=sharing&ouid=100706459363140641614&rtpof=true&sd=true"
+target="_blank"
+class="btn">
+Download Excel
+</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 Sistem Inventaris Kelompok POKLAHSAR
+</div>
+
+<script>
+function kembaliKeAsal() {
+    // 1. Cek apakah ada informasi halaman asal (referrer)
+    if (document.referrer) {
+        window.location.href = document.referrer;
+    } 
+    // 2. Jika tidak ada referrer tetapi ada riwayat tab, gunakan history back
+    else if (history.length > 1) {
+        history.back();
+    } 
+    // 3. Jika dibuka di tab baru secara manual (tanpa klik link/kosong), coba tutup tab
+    else {
+        alert("Tidak ada halaman sebelumnya untuk kembali.");
+        window.close();
+    }
+}
+</script>
+
+</body>
+</html>
