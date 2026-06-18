@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 
 <meta charset="UTF-8">
@@ -24,24 +25,11 @@ background:#eef3fa;
 color:#333;
 }
 
-/* HEADER */
-
 .header{
 background:#0b5ed7;
 color:white;
 text-align:center;
 padding:35px 20px;
-box-shadow:0 3px 10px rgba(0,0,0,.1);
-}
-
-.header h1{
-font-size:32px;
-margin-bottom:10px;
-}
-
-.header p{
-font-size:16px;
-opacity:.9;
 }
 
 .back-btn{
@@ -53,14 +41,7 @@ color:#0b5ed7;
 text-decoration:none;
 border-radius:8px;
 font-weight:600;
-transition:.3s;
 }
-
-.back-btn:hover{
-background:#f2f2f2;
-}
-
-/* CONTENT */
 
 .container{
 max-width:1300px;
@@ -70,25 +51,36 @@ padding:0 20px;
 
 .card{
 background:white;
-border-radius:15px;
 padding:25px;
+border-radius:15px;
 margin-bottom:20px;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
-.card h2{
-color:#0b5ed7;
-margin-bottom:15px;
-padding-bottom:10px;
-border-bottom:2px solid #e5e5e5;
+.summary-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
 }
 
-.info-note{
-background:#f8f9fa;
-padding:12px;
-border-radius:8px;
-margin-bottom:15px;
-line-height:1.8;
+.summary-header h2{
+color:#0b5ed7;
+}
+
+.summary-content{
+display:none;
+margin-top:20px;
+}
+
+.summary-content.show{
+display:block;
+}
+
+.arrow{
+font-size:22px;
+font-weight:bold;
+color:#0b5ed7;
 }
 
 .table-container{
@@ -105,67 +97,44 @@ min-width:900px;
 background:#0b5ed7;
 color:white;
 padding:12px;
-border:1px solid #ddd;
 }
 
 .data-table td{
 padding:10px;
-text-align:center;
 border:1px solid #ddd;
+text-align:center;
 }
 
-.data-table tbody tr:nth-child(even){
-background:#f8f9fa;
+.form-links{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
 }
 
-.data-table tbody tr:hover{
-background:#eef3fa;
+.form-card{
+background:#f8faff;
+border:2px solid #e0e8ff;
+padding:25px;
+border-radius:12px;
+text-align:center;
 }
 
-/* BADGE */
-
-.badge-pink{
-background:#e91e63;
+.btn-form,
+.btn-sheet{
+display:inline-block;
+padding:10px 20px;
+border-radius:8px;
 color:white;
-padding:5px 10px;
-border-radius:15px;
-font-size:12px;
+text-decoration:none;
+margin-top:10px;
 }
 
-.badge-male{
-background:#2196f3;
-color:white;
-padding:5px 10px;
-border-radius:15px;
-font-size:12px;
+.btn-form{
+background:#0b5ed7;
 }
 
-.badge-success{
+.btn-sheet{
 background:#28a745;
-color:white;
-padding:5px 10px;
-border-radius:15px;
-}
-
-.badge-warning{
-background:#ff9800;
-color:white;
-padding:5px 10px;
-border-radius:15px;
-}
-
-.badge-member{
-background:#6c757d;
-color:white;
-padding:5px 10px;
-border-radius:15px;
-}
-
-.badge{
-background:#3f51b5;
-color:white;
-padding:5px 10px;
-border-radius:15px;
 }
 
 .footer{
@@ -173,8 +142,6 @@ text-align:center;
 padding:20px;
 background:white;
 margin-top:30px;
-border-top:1px solid #ddd;
-color:#666;
 }
 
 </style>
@@ -187,7 +154,7 @@ color:#666;
 
 <h1>
 <i class="fas fa-users"></i>
- Data Anggota Kelompok
+Data Anggota Kelompok
 </h1>
 
 <p>
@@ -196,12 +163,30 @@ Kelompok Pengolah dan Pemasar Hasil Perikanan
 
 <a href="index.html" class="back-btn">
 <i class="fas fa-arrow-left"></i>
- Kembali ke Menu
+Kembali ke Menu
 </a>
 
 </div>
 
 <div class="container">
+
+<div class="card">
+
+<div class="summary-header"
+onclick="toggleAnggota()">
+
+<h2>
+👥 Data Anggota Kelompok
+</h2>
+
+<span id="arrow" class="arrow">
+▼
+</span>
+
+</div>
+
+<div id="anggotaContent"
+class="summary-content">
 
 <!-- BUNGA MERAH -->
 
@@ -710,6 +695,62 @@ Kelompok Pengolah dan Pemasar Hasil Perikanan
 </div>
 
 </div>
+</div>
+
+<div class="card">
+
+<h2>
+<i class="fas fa-folder-open"></i>
+Form dan Data Anggota Kelompok
+</h2>
+
+<div class="form-links">
+
+<div class="form-card">
+
+<h3>
+📝 Form Input Anggota
+</h3>
+
+<p>
+Input data anggota kelompok POKLAHSAR.
+</p>
+
+<a href="https://forms.gle/CCpKHv83BWtZxxYR6"
+target="_blank"
+class="btn-form">
+
+Buka Form
+
+</a>
+
+</div>
+
+<div class="form-card">
+
+<h3>
+📊 Hasil Data Anggota
+</h3>
+
+<p>
+Lihat hasil pengisian data anggota kelompok.
+</p>
+
+<a href="https://docs.google.com/spreadsheets/d/1HN_755mmQQVjFg6XmzhN9Q_kdyLPcGCITDP8NiFmp1I/edit?usp=sharing"
+target="_blank"
+class="btn-sheet">
+
+Lihat Data
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 <div class="footer">
 
@@ -718,8 +759,27 @@ Fakultas Perikanan dan Ilmu Kelautan
 
 </div>
 
-</body>
-</html>
-```
+<script>
 
+function toggleAnggota(){
+
+const content =
+document.getElementById("anggotaContent");
+
+const arrow =
+document.getElementById("arrow");
+
+content.classList.toggle("show");
+
+if(content.classList.contains("show")){
+arrow.innerHTML="▲";
+}else{
+arrow.innerHTML="▼";
+}
+
+}
+
+</script>
+
+</body>
 </html>
