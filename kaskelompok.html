@@ -122,7 +122,7 @@
         }
         .btn-excel { background: #e6f4ea; color: #137333; border-color: #ceead6; }
         .btn-excel:hover { background: #137333; color: white; }
-        
+       
         /* Total Kas Styling */
         .total-kas {
             font-size: 28px;
@@ -206,7 +206,6 @@
     </style>
 </head>
 <body>
-
 <div class="sidebar">
     <div class="logo">
         <h2>POKLAHSAR</h2>
@@ -223,7 +222,6 @@
         </ul>
     </div>
 </div>
-
 <div class="main">
     <div class="topbar">
         <h2>Kas Kelompok dan Monitoring Evaluasi</h2>
@@ -231,7 +229,7 @@
             <i class="fas fa-user-circle"></i> Administrator
         </div>
     </div>
-    
+   
     <div class="content">
         <h2 class="section-title"><i class="fas fa-wallet"></i> Ringkasan Keuangan Kas Kelompok</h2>
         <div class="grid-container">
@@ -254,7 +252,6 @@
                 <div id="loading-saldo" class="loading">Memuat data...</div>
             </div>
         </div>
-
         <h2 class="section-title"><i class="fas fa-link"></i> Integrasi Data & Formulir</h2>
         <div class="grid-container">
             <div class="data-card">
@@ -289,11 +286,14 @@
                 <h3><i class="fas fa-file-excel"></i> Hasil Analisis Excel</h3>
                 <p style="margin-bottom: 15px; font-size: 14px; color: #666;">File hasil analisis tingkat kepuasan anggota bagian kas kelompok.</p>
                 <div class="btn-group">
-                    <a href="https://docs.google.com/spreadsheets/d/1fxyvT7EyzGcp0Dwp05lw5zgnqTyqD5lp/edit?usp=sharing&ouid=115592520576030021001&rtpof=true&sd=true" target="_blank" class="btn btn-excel"><i class="fas fa-file-excel"></i> Download Excel</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1fxyvT7EyzGcp0Dwp05lw5zgnqTyqD5lp/export?format=xlsx" 
+                       class="btn btn-excel"
+                       download="Hasil_Analisis_Kepuasan_Kas_Kelompok.xlsx">
+                        <i class="fas fa-file-excel"></i> Unduh Excel
+                    </a>
                 </div>
             </div>
         </div>
-
         <h2 class="section-title"><i class="fas fa-chart-bar"></i> Visualisasi Dashboard Interaktif</h2>
         <div class="dashboard-container">
             <div class="tab-menu">
@@ -304,7 +304,7 @@
                     <i class="fas fa-chart-line"></i> Dashboard Kepuasan
                 </button>
             </div>
-            
+           
             <div id="dashboard-pendaftaran" class="tab-content">
                 <div class="iframe-wrapper">
                     <iframe
@@ -319,7 +319,7 @@
                     </div>
                 </div>
             </div>
-            
+           
             <div id="dashboard-kepuasan" class="tab-content" style="display: none;">
                 <div class="iframe-wrapper">
                     <iframe
@@ -337,37 +337,29 @@
         </div>
     </div>
 </div>
-
 <script>
 // Fungsi Tombol Kembali Multi-Kondisi (Pasti Berhasil)
 function pergiKeBeranda() {
-    // 1. Cek jika halaman ini dibuka lewat klik link dari website/halaman lain
     if (document.referrer && document.referrer !== "") {
         window.location.href = document.referrer;
-    } 
-    // 2. Cek jika tab memiliki riwayat navigasi aktif sebelumnya
+    }
     else if (window.history.length > 1) {
         window.history.back();
-    } 
-    // 3. JIKA DUA CARA DI ATAS GAGAL (karena file dibuka offline/langsung klik file-nya), 
-    // Maka paksa arahkan browser mencari file index.html di direktori lokal yang sama.
+    }
     else {
         window.location.href = "index.html";
     }
 }
-
 function formatRupiah(angka) {
     return 'Rp ' + angka.toLocaleString('id-ID');
 }
-
 async function loadKasData() {
     const spreadsheetId = '1IEvU-u6quLwaXasoR1AhHjD3TS9QLk_oWcdE5TeoYq4';
     const csvUrl = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/export?format=csv`;
- 
     try {
         const response = await fetch(csvUrl);
         if (!response.ok) throw new Error('Gagal mengambil data');
-    
+   
         const csvText = await response.text();
         const rows = csvText.trim().split('\n').map(row => {
             return row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
@@ -384,7 +376,7 @@ async function loadKasData() {
         for (let i = 1; i < rows.length; i++) {
             const row = rows[i];
             if (row.length <= Math.max(jenisIndex, nominalIndex)) continue;
-         
+        
             const jenis = row[jenisIndex].trim().replace(/"/g, '');
             let nominalStr = row[nominalIndex].trim().replace(/"/g, '').replace(/\./g, '').replace(/,/g, '');
             const nominal = parseInt(nominalStr) || 0;
@@ -395,11 +387,11 @@ async function loadKasData() {
             }
         }
         const saldoBersih = totalMasuk - totalKeluar;
-      
+     
         document.getElementById('total-masuk').textContent = formatRupiah(totalMasuk);
         document.getElementById('total-keluar').textContent = formatRupiah(totalKeluar);
         document.getElementById('saldo-grid').textContent = formatRupiah(saldoBersih);
-      
+     
         document.getElementById('loading-masuk').style.display = 'none';
         document.getElementById('loading-keluar').style.display = 'none';
         document.getElementById('loading-saldo').style.display = 'none';
@@ -410,18 +402,16 @@ async function loadKasData() {
         document.getElementById('saldo-grid').innerHTML = 'Gagal memuat';
     }
 }
-
 function switchDashboard(evt, dashboardId) {
     const tabContents = document.querySelectorAll(".tab-content");
     tabContents.forEach(content => content.style.display = "none");
-  
+ 
     const tabBtns = document.querySelectorAll(".tab-btn");
     tabBtns.forEach(btn => btn.classList.remove("active"));
-  
+ 
     document.getElementById(dashboardId).style.display = "block";
     evt.currentTarget.classList.add("active");
 }
-
 window.onload = function() {
     loadKasData();
 };
