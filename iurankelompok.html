@@ -50,37 +50,29 @@ margin-bottom:5px;
 .logo p{
 font-size:13px;
 opacity:.8;
+line-height:1.5;
 }
 
-.menu{
+.back-menu{
 padding:15px;
+border-bottom:1px solid rgba(255,255,255,.15);
 }
 
-.menu ul{
-list-style:none;
-}
-
-.menu li{
-margin-bottom:5px;
-}
-
-.menu a{
+.back-menu a{
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:12px 15px;
+gap:12px;
+background:rgba(255,255,255,.15);
+padding:14px 18px;
+border-radius:12px;
 color:white;
 text-decoration:none;
-border-radius:8px;
+font-weight:600;
 transition:.3s;
 }
 
-.menu a:hover{
-background:rgba(255,255,255,.15);
-}
-
-.active{
-background:rgba(255,255,255,.15);
+.back-menu a:hover{
+background:rgba(255,255,255,.25);
 }
 
 /* MAIN */
@@ -103,6 +95,20 @@ box-shadow:0 2px 10px rgba(0,0,0,.08);
 color:#0b5ed7;
 }
 
+.topbar-user{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:15px;
+font-weight:600;
+color:#333;
+}
+
+.topbar-user i{
+font-size:22px;
+color:#0b5ed7;
+}
+
 .content{
 padding:25px;
 }
@@ -121,8 +127,6 @@ margin-bottom:8px;
 color:#666;
 }
 
-/* CARD */
-
 .card{
 background:white;
 padding:25px;
@@ -136,50 +140,55 @@ color:#0b5ed7;
 margin-bottom:20px;
 }
 
-/* STATISTIK */
+.summary-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+}
+
+.summary-header span{
+font-size:22px;
+font-weight:bold;
+color:#0b5ed7;
+}
+
+.summary-content{
+display:none;
+margin-top:20px;
+}
+
+.summary-content.show{
+display:block;
+}
 
 .stats-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
-margin-bottom:25px;
 }
 
 .stat-card{
-background:white;
+background:#f8faff;
 padding:25px;
 border-radius:15px;
 text-align:center;
-box-shadow:0 4px 12px rgba(0,0,0,.08);
-}
-
-.stat-card i{
-font-size:35px;
-color:#0b5ed7;
-margin-bottom:15px;
+border:2px solid #e0e8ff;
 }
 
 .stat-card h4{
-margin-bottom:10px;
 color:#666;
+margin-bottom:10px;
 }
 
 .stat-card h2{
 color:#0b5ed7;
 }
 
-/* FORM */
-
 .form-links{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(2,1fr);
 gap:20px;
-}
-
-@media(max-width:992px){
-.form-links{
-grid-template-columns:1fr;
-}
 }
 
 .form-card{
@@ -212,21 +221,13 @@ font-weight:600;
 margin-top:10px;
 }
 
-.btn-form{
-background:#0b5ed7;
-}
-
-.btn-sheet{
-background:#28a745;
-}
-
-.btn-excel{
-background:#1d6f42;
-}
+.btn-form{background:#0b5ed7;}
+.btn-sheet{background:#28a745;}
+.btn-excel{background:#1d6f42;}
 
 .looker-container{
 width:100%;
-height:600px;
+height:700px;
 border:none;
 border-radius:12px;
 }
@@ -248,48 +249,10 @@ width:100%;
 grid-template-columns:1fr;
 }
 
-}
-.topbar-user{
-display:flex;
-align-items:center;
-gap:10px;
-font-size:15px;
-font-weight:600;
-color:#333;
+.looker-container{
+height:500px;
 }
 
-.topbar-user i{
-font-size:22px;
-color:#0b5ed7;
-}
- 
-/* Tombol Kembali */
-
-.back-menu{
-padding:15px;
-border-bottom:1px solid rgba(255,255,255,.15);
-}
-
-.back-menu a{
-display:flex;
-align-items:center;
-gap:12px;
-background:rgba(255,255,255,.15);
-padding:14px 18px;
-border-radius:12px;
-color:white;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
-
-.back-menu a:hover{
-background:rgba(255,255,255,.25);
-transform:translateX(5px);
-}
-
-.back-menu i{
-font-size:18px;
 }
 
 </style>
@@ -334,118 +297,119 @@ font-size:18px;
 <h2>💰 Iuran Kelompok</h2>
 
 <p>
-Pengelolaan iuran wajib, iuran sukarela,
-dan tabungan anggota kelompok.
+Pengelolaan iuran wajib, iuran sukarela, dan tabungan anggota kelompok.
 </p>
 
 </div>
 
- <!-- STATISTIK -->
+<div class="card">
+
+<div class="summary-header" onclick="toggleSummary()">
+
+<h3>
+<i class="fas fa-chart-pie"></i>
+Ringkasan Pembayaran Kelompok
+</h3>
+
+<span id="arrow">▼</span>
+
+</div>
+
+<div id="summaryContent" class="summary-content">
+
+<div class="card">
+
+<h3>📈 Total Tabungan Kelompok</h3>
 
 <div class="stats-grid">
 
 <div class="stat-card">
-<i class="fas fa-piggy-bank"></i>
-<h4>Total Tabungan</h4>
-<h2>Rp 8.302.000</h2>
+<h4>🌺 Bunga Merah</h4>
+<h2>Rp 950.000</h2>
 </div>
 
 <div class="stat-card">
-<i class="fas fa-wallet"></i>
-<h4>Iuran Wajib</h4>
-<h2>Rp 5.180.000</h2>
+<h4>🐟 Srikandi</h4>
+<h2>Rp 945.000</h2>
 </div>
 
 <div class="stat-card">
-<i class="fas fa-hand-holding-heart"></i>
-<h4>Iuran Sukarela</h4>
-<h2>Rp 2.068.000</h2>
+<h4>🌊 Sumber Rejeki</h4>
+<h2>Rp 922.000</h2>
 </div>
 
 <div class="stat-card">
-<i class="fas fa-users"></i>
-<h4>Anggota Aktif</h4>
-<h2>42</h2>
+<h4>⭐ Waroh</h4>
+<h2>Rp 870.000</h2>
 </div>
 
 </div>
 
-<!-- FORM DAN DATA IURAN -->
+</div>
 
 <div class="card">
 
-<h3>
-<i class="fas fa-money-check-alt"></i>
- Form dan Data Iuran
-</h3>
+<h3>💰 Total Iuran Wajib Kelompok</h3>
+
+<div class="stats-grid">
+
+<div class="stat-card"><h4>🌺 Bunga Merah</h4><h2>Rp 350.000</h2></div>
+<div class="stat-card"><h4>🐟 Srikandi</h4><h2>Rp 315.000</h2></div>
+<div class="stat-card"><h4>🌊 Sumber Rejeki</h4><h2>Rp 315.000</h2></div>
+<div class="stat-card"><h4>⭐ Waroh</h4><h2>Rp 315.000</h2></div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>🤝 Total Iuran Sukarela Kelompok</h3>
+
+<div class="stats-grid">
+
+<div class="stat-card"><h4>🌺 Bunga Merah</h4><h2>Rp 317.000</h2></div>
+<div class="stat-card"><h4>🐟 Srikandi</h4><h2>Rp 310.000</h2></div>
+<div class="stat-card"><h4>🌊 Sumber Rejeki</h4><h2>Rp 356.000</h2></div>
+<div class="stat-card"><h4>⭐ Waroh</h4><h2>Rp 340.000</h2></div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div class="card">
+
+<h3><i class="fas fa-money-check-alt"></i> Form dan Data Iuran</h3>
 
 <div class="form-links">
 
 <div class="form-card">
 
-<h4>
-<i class="fas fa-file-signature"></i>
- Form Input Iuran
-</h4>
+<h4>📝 Form Input Iuran</h4>
 
-<p>
-Input data iuran wajib, iuran sukarela,
-dan tabungan anggota kelompok.
-</p>
+<p>Input data iuran wajib, iuran sukarela dan tabungan anggota.</p>
 
 <a href="https://forms.gle/92bhx7dDxa8sfWT18"
 class="btn-form"
 target="_blank">
-
-<i class="fas fa-external-link-alt"></i>
- Buka Form
-
+Buka Form
 </a>
 
 </div>
 
 <div class="form-card">
 
-<h4>
-<i class="fas fa-table"></i>
- Hasil Data Iuran
-</h4>
+<h4>📊 Hasil Data Iuran</h4>
 
-<p>
-Lihat hasil pengisian dan rekapitulasi
-iuran anggota kelompok.
-</p>
+<p>Lihat hasil pengisian dan rekapitulasi iuran anggota.</p>
 
 <a href="https://docs.google.com/spreadsheets/d/1lthZ3XknrprhJJzlZPd-wHN8PpClsrU-lY-hq1ZD9oA/edit?usp=sharing"
 class="btn-sheet"
 target="_blank">
-
-<i class="fas fa-table"></i>
- Lihat Data
-
-</a>
-
-</div>
-
-<div class="form-card">
-
-<h4>
-<i class="fas fa-file-excel"></i>
- Download Data Iuran
-</h4>
-
-<p>
-Download hasil data iuran kelompok
-dalam format Microsoft Excel.
-</p>
-
-<a href="hasilanalisisiurankelompok.xlsx"
-class="btn-excel"
-target="_blank">
-
-<i class="fas fa-download"></i>
- Download Excel
-
+Lihat Data
 </a>
 
 </div>
@@ -453,108 +417,48 @@ target="_blank">
 </div>
 
 </div>
-
-<!-- DASHBOARD IURAN -->
 
 <div class="card">
 
-<h3>
-<i class="fas fa-chart-pie"></i>
- Dashboard Iuran Kelompok
-</h3>
-
-<p style="margin-bottom:15px;color:#666;">
-
-Dashboard analisis pembayaran iuran,
-tabungan anggota, dan kontribusi kelompok.
-
-</p>
+<h3><i class="fas fa-chart-pie"></i> Dashboard Iuran Kelompok</h3>
 
 <iframe
 class="looker-container"
-src="https://datastudio.google.com/embed/reporting/afc00e64-f3e1-4bbe-a10b-556e69065fe7/page/page_12345"
-allowfullscreen>
-
+src="https://datastudio.google.com/embed/reporting/afc00e64-f3e1-4bbe-a10b-556e69065fe7/page/page_12345">
 </iframe>
 
 </div>
 
-<!-- TINGKAT KEPUASAN -->
-
 <div class="card">
 
-<h3>
-<i class="fas fa-smile"></i>
- Tingkat Kepuasan Iuran Kelompok
-</h3>
+<h3><i class="fas fa-smile"></i> Tingkat Kepuasan Iuran Kelompok</h3>
 
 <div class="form-links">
 
 <div class="form-card">
 
-<h4>
-<i class="fas fa-clipboard-check"></i>
- Form Tingkat Kepuasan
-</h4>
+<h4>📝 Form Tingkat Kepuasan</h4>
 
-<p>
-Berikan penilaian terhadap layanan
-Iuran Kelompok POKLAHSAR.
-</p>
+<p>Berikan penilaian terhadap layanan Iuran Kelompok POKLAHSAR.</p>
 
 <a href="https://forms.gle/6MmehWU3XesuG2np6"
 class="btn-form"
 target="_blank">
-
-<i class="fas fa-external-link-alt"></i>
- Buka Form
-
+Buka Form
 </a>
 
 </div>
 
 <div class="form-card">
 
-<h4>
-<i class="fas fa-table"></i>
- Hasil Tingkat Kepuasan
-</h4>
+<h4>📊 Hasil Tingkat Kepuasan</h4>
 
-<p>
-Lihat hasil pengisian tingkat kepuasan
-pada layanan Iuran Kelompok.
-</p>
+<p>Lihat hasil pengisian tingkat kepuasan.</p>
 
 <a href="https://docs.google.com/spreadsheets/d/1Sch-VXawqMhW1_CyPN22FvwjNBxDEOdvvNLNvVFCzNI/edit?usp=sharing"
 class="btn-sheet"
 target="_blank">
-
-<i class="fas fa-table"></i>
- Lihat Hasil
-
-</a>
-
-</div>
-
-<div class="form-card">
-
-<h4>
-<i class="fas fa-file-excel"></i>
- Download Data Kepuasan
-</h4>
-
-<p>
-Download hasil tingkat kepuasan
-dalam format Microsoft Excel.
-</p>
-
-<a href="hasilanalisistingkatkepuasaniurankelompok.xlsx"
-class="btn-excel"
-target="_blank">
-
-<i class="fas fa-download"></i>
- Download Excel
-
+Lihat Hasil
 </a>
 
 </div>
@@ -562,35 +466,39 @@ target="_blank">
 </div>
 
 </div>
-
-<!-- DASHBOARD KEPUASAN -->
 
 <div class="card">
 
-<h3>
-<i class="fas fa-chart-bar"></i>
- Dashboard Tingkat Kepuasan
-</h3>
-
-<p style="margin-bottom:15px;color:#666;">
-
-Dashboard analisis kepuasan anggota
-terhadap sistem iuran kelompok.
-
-</p>
+<h3><i class="fas fa-chart-bar"></i> Dashboard Tingkat Kepuasan</h3>
 
 <iframe
 class="looker-container"
-src="https://datastudio.google.com/embed/reporting/c1d5297c-0a0b-4634-aabf-750a80188cd4/page/page_12345"
-allowfullscreen>
-
+src="https://datastudio.google.com/embed/reporting/c1d5297c-0a0b-4634-aabf-750a80188cd4/page/page_12345">
 </iframe>
 
 </div>
 
 </div>
-
 </div>
+
+<script>
+
+function toggleSummary(){
+
+const content=document.getElementById("summaryContent");
+const arrow=document.getElementById("arrow");
+
+content.classList.toggle("show");
+
+if(content.classList.contains("show")){
+arrow.innerHTML="▲";
+}else{
+arrow.innerHTML="▼";
+}
+
+}
+
+</script>
 
 </body>
 </html>
