@@ -30,7 +30,7 @@ display:flex;
 .sidebar{
 width:280px;
 height:100vh;
-background:#0b5ed7;
+background:linear-gradient(180deg,#0b5ed7,#084298);
 color:white;
 position:fixed;
 overflow-y:auto;
@@ -39,23 +39,22 @@ overflow-y:auto;
 .logo{
 padding:25px;
 text-align:center;
-border-bottom:1px solid rgba(255,255,255,.2);
+border-bottom:1px solid rgba(255,255,255,.15);
 }
 
 .logo h2{
-font-size:24px;
+font-size:26px;
 margin-bottom:5px;
 }
 
 .logo p{
 font-size:13px;
-opacity:.8;
 line-height:1.5;
+opacity:.9;
 }
 
 .back-menu{
 padding:15px;
-border-bottom:1px solid rgba(255,255,255,.15);
 }
 
 .back-menu a{
@@ -80,6 +79,7 @@ background:rgba(255,255,255,.25);
 .main{
 margin-left:280px;
 width:calc(100% - 280px);
+min-height:100vh;
 }
 
 .topbar{
@@ -93,7 +93,7 @@ box-shadow:0 2px 10px rgba(0,0,0,.08);
 
 .topbar h2{
 color:#0b5ed7;
-font-size:30px;
+font-size:28px;
 }
 
 .topbar-user{
@@ -106,27 +106,32 @@ color:#333;
 }
 
 .topbar-user i{
-font-size:22px;
+font-size:24px;
 color:#0b5ed7;
 }
 
 .content{
 padding:25px;
+width:100%;
 }
 
 .page-header{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
 margin-bottom:25px;
 }
 
 .page-header h2{
 font-size:32px;
 color:#0b5ed7;
-margin-bottom:8px;
+margin-bottom:10px;
 }
 
 .page-header p{
 color:#666;
-font-size:16px;
+line-height:1.8;
 }
 
 /* CARD */
@@ -137,19 +142,20 @@ padding:25px;
 border-radius:18px;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
 margin-bottom:25px;
+width:100%;
 }
 
 .card h3{
 color:#0b5ed7;
 margin-bottom:20px;
-font-size:24px;
+font-size:26px;
 }
 
 /* FORM CARD */
 
 .form-links{
 display:grid;
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:25px;
 }
 
@@ -157,32 +163,35 @@ gap:25px;
 background:#f8faff;
 border:2px solid #dbe6ff;
 border-radius:15px;
-padding:30px;
+padding:25px;
 text-align:center;
+transition:.3s;
+}
+
+.form-card:hover{
+transform:translateY(-5px);
 }
 
 .form-card h4{
+font-size:22px;
 color:#0b5ed7;
 margin-bottom:15px;
-font-size:22px;
 }
 
 .form-card p{
+line-height:1.8;
 color:#666;
-line-height:1.7;
 margin-bottom:20px;
 }
 
 .btn-form,
-.btn-sheet,
-.btn-excel{
+.btn-sheet{
 display:inline-block;
-padding:12px 25px;
+padding:12px 24px;
 border-radius:10px;
 text-decoration:none;
-color:white;
 font-weight:600;
-transition:.3s;
+color:white;
 }
 
 .btn-form{
@@ -193,34 +202,17 @@ background:#0b5ed7;
 background:#28a745;
 }
 
-.btn-excel{
-background:#1d6f42;
-}
-
-.btn-form:hover,
-.btn-sheet:hover,
-.btn-excel:hover{
-opacity:.9;
-transform:translateY(-2px);
-}
+/* DASHBOARD */
 
 .looker-container{
 width:100%;
 height:750px;
 border:none;
 border-radius:15px;
-box-shadow:0 4px 15px rgba(0,0,0,.08);
-background:white;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
-.footer{
-padding:20px;
-text-align:center;
-color:#666;
-background:white;
-margin-top:20px;
-border-top:1px solid #ddd;
-}
+/* RESPONSIVE */
 
 @media(max-width:768px){
 
@@ -235,6 +227,12 @@ margin-left:0;
 width:100%;
 }
 
+.topbar{
+flex-direction:column;
+gap:10px;
+text-align:center;
+}
+
 .form-links{
 grid-template-columns:1fr;
 }
@@ -243,6 +241,13 @@ grid-template-columns:1fr;
 height:500px;
 }
 
+}
+
+.footer{
+text-align:center;
+padding:20px;
+color:#666;
+font-size:14px;
 }
 
 </style>
@@ -291,10 +296,9 @@ Kelompok Pengolah dan Pemasar Hasil Perikanan
 </h2>
 
 <p>
-Pengelolaan data kelompok POKLAHSAR,
-hasil pengisian formulir, dashboard
-visualisasi data, serta evaluasi
-tingkat kepuasan pengguna sistem.
+Pengelolaan data kelompok, anggota,
+komoditas perikanan, dan evaluasi
+Sistem Informasi POKLAHSAR.
 </p>
 
 </div>
@@ -304,8 +308,8 @@ tingkat kepuasan pengguna sistem.
 <div class="card">
 
 <h3>
-<i class="fas fa-database"></i>
-Data Kelompok POKLAHSAR
+<i class="fas fa-folder-open"></i>
+ Data Kelompok POKLAHSAR
 </h3>
 
 <div class="form-links">
@@ -314,7 +318,7 @@ Data Kelompok POKLAHSAR
 
 <h4>
 <i class="fas fa-file-signature"></i>
-Form Pendaftaran Kelompok
+ Form Pendaftaran Kelompok
 </h4>
 
 <p>
@@ -338,7 +342,7 @@ target="_blank">
 
 <h4>
 <i class="fas fa-table"></i>
-Hasil Data Kelompok
+ Hasil Data Kelompok
 </h4>
 
 <p>
@@ -368,15 +372,15 @@ target="_blank">
 
 <h3>
 <i class="fas fa-chart-pie"></i>
-Dashboard Data Kelompok
+ Dashboard Data Kelompok
 </h3>
 
-<p style="margin-bottom:20px;color:#666;">
+<p style="margin-bottom:20px;color:#666;line-height:1.8;">
 
 Visualisasi data kelompok, anggota,
-komoditas perikanan, dan informasi
-lainnya yang ditampilkan melalui
-Looker Studio secara interaktif.
+dan komoditas perikanan POKLAHSAR
+yang ditampilkan secara interaktif
+melalui Looker Studio.
 
 </p>
 
@@ -384,6 +388,7 @@ Looker Studio secara interaktif.
 class="looker-container"
 src="https://datastudio.google.com/embed/reporting/54d35035-a75c-4150-a2d7-34a77a6f6c4c/page/page_12345"
 allowfullscreen>
+
 </iframe>
 
 </div>
@@ -394,7 +399,7 @@ allowfullscreen>
 
 <h3>
 <i class="fas fa-smile"></i>
-Tingkat Kepuasan Sistem Informasi POKLAHSAR
+ Tingkat Kepuasan Sistem Informasi POKLAHSAR
 </h3>
 
 <div class="form-links">
@@ -403,12 +408,13 @@ Tingkat Kepuasan Sistem Informasi POKLAHSAR
 
 <h4>
 <i class="fas fa-clipboard-check"></i>
-Form Tingkat Kepuasan
+ Form Tingkat Kepuasan
 </h4>
 
 <p>
 Berikan penilaian terhadap layanan
-dan fitur Sistem Informasi POKLAHSAR.
+Sistem Informasi POKLAHSAR melalui
+Google Form.
 </p>
 
 <a href="https://forms.gle/xVM5dooQeRFJxdbT8"
@@ -426,12 +432,12 @@ target="_blank">
 
 <h4>
 <i class="fas fa-table"></i>
-Hasil Tingkat Kepuasan
+ Hasil Tingkat Kepuasan
 </h4>
 
 <p>
-Lihat hasil evaluasi pengguna
-terhadap Sistem Informasi
+Lihat seluruh hasil penilaian
+pengguna terhadap Sistem Informasi
 POKLAHSAR.
 </p>
 
@@ -456,15 +462,14 @@ target="_blank">
 
 <h3>
 <i class="fas fa-chart-line"></i>
-Dashboard Tingkat Kepuasan
+ Dashboard Tingkat Kepuasan
 </h3>
 
-<p style="margin-bottom:20px;color:#666;">
+<p style="margin-bottom:20px;color:#666;line-height:1.8;">
 
 Visualisasi hasil evaluasi pengguna
 terhadap Sistem Informasi POKLAHSAR
-yang ditampilkan secara interaktif
-melalui Looker Studio.
+yang ditampilkan melalui Looker Studio.
 
 </p>
 
@@ -472,6 +477,7 @@ melalui Looker Studio.
 class="looker-container"
 src="https://datastudio.google.com/embed/reporting/65589830-c520-4213-a2d3-0f827ad9ba15/page/page_12345"
 allowfullscreen>
+
 </iframe>
 
 </div>
@@ -482,10 +488,10 @@ allowfullscreen>
 
 <h3>
 <i class="fas fa-file-excel"></i>
-Download Hasil Analisis
+ Download Hasil Analisis
 </h3>
 
-<p style="margin-bottom:20px;color:#666;">
+<p style="margin-bottom:20px;color:#666;line-height:1.8;">
 
 Download hasil analisis data kelompok
 dan hasil evaluasi Sistem Informasi
@@ -494,7 +500,7 @@ POKLAHSAR dalam format Microsoft Excel.
 </p>
 
 <a href="hasilanalisiskelompokpoklahsar.xlsx"
-class="btn-excel"
+class="btn-sheet"
 target="_blank">
 
 <i class="fas fa-download"></i>
@@ -507,15 +513,15 @@ target="_blank">
 </div>
 <!-- END CONTENT -->
 
-</div>
-<!-- END MAIN -->
-
 <div class="footer">
 
 © 2026 Sistem Informasi POKLAHSAR |
 Fakultas Perikanan dan Ilmu Kelautan
 
 </div>
+
+</div>
+<!-- END MAIN -->
 
 </body>
 
