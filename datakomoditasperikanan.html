@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Data Komoditas Perikanan</title>
+<title>Data Komoditas Perikanan | POKLAHSAR</title>
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -60,15 +61,11 @@ transition:.3s;
 background:#f2f2f2;
 }
 
-/* CONTENT */
-
 .container{
-max-width:1200px;
+max-width:1300px;
 margin:30px auto;
 padding:0 20px;
 }
-
-/* CARD */
 
 .card{
 background:white;
@@ -76,11 +73,6 @@ border-radius:15px;
 padding:25px;
 margin-bottom:20px;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-3px);
 }
 
 .card h2{
@@ -93,7 +85,30 @@ border-bottom:2px solid #e5e5e5;
 .card p{
 line-height:1.8;
 text-align:justify;
-margin-bottom:20px;
+margin-bottom:15px;
+}
+
+/* TOGGLE */
+
+.summary-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+}
+
+.summary-header span{
+font-size:24px;
+font-weight:bold;
+color:#0b5ed7;
+}
+
+.summary-content{
+display:none;
+}
+
+.summary-content.show{
+display:block;
 }
 
 /* TABLE */
@@ -105,7 +120,7 @@ border-collapse:collapse;
 
 td{
 padding:12px;
-border-bottom:1px solid #e5e5e5;
+border-bottom:1px solid #ddd;
 }
 
 td:first-child{
@@ -113,6 +128,60 @@ width:30%;
 font-weight:600;
 background:#f8f9fa;
 color:#0b5ed7;
+}
+
+/* FORM CARD */
+
+.form-links{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:20px;
+}
+
+.form-card{
+background:#f8faff;
+padding:25px;
+border-radius:12px;
+border:2px solid #dbe6ff;
+text-align:center;
+}
+
+.form-card h3{
+color:#0b5ed7;
+margin-bottom:15px;
+}
+
+.form-card p{
+color:#666;
+margin-bottom:20px;
+text-align:center;
+}
+
+.btn-form,
+.btn-sheet{
+display:inline-block;
+padding:12px 20px;
+border-radius:8px;
+text-decoration:none;
+color:white;
+font-weight:600;
+}
+
+.btn-form{
+background:#0b5ed7;
+}
+
+.btn-sheet{
+background:#28a745;
+}
+
+/* DASHBOARD */
+
+.looker-container{
+width:100%;
+height:750px;
+border:none;
+border-radius:15px;
 }
 
 /* FOOTER */
@@ -144,6 +213,10 @@ td:first-child{
 margin-top:10px;
 }
 
+.looker-container{
+height:500px;
+}
+
 }
 
 </style>
@@ -172,6 +245,23 @@ Kelompok Pengolah dan Pemasar Hasil Perikanan
 
 <div class="container">
 
+<!-- INFORMASI KOMODITAS -->
+
+<div class="card">
+
+<div class="summary-header" onclick="toggleKomoditas()">
+
+<h2>
+<i class="fas fa-water"></i>
+ Informasi Komoditas Perikanan
+</h2>
+
+<span id="arrowKomoditas">▼</span>
+
+</div>
+
+<div id="komoditasContent" class="summary-content">
+
 <!-- BUNGA MERAH -->
 
 <div class="card">
@@ -179,10 +269,9 @@ Kelompok Pengolah dan Pemasar Hasil Perikanan
 <h2>🌺 POKLAHSAR BUNGA MERAH</h2>
 
 <p>
-POKLAHSAR Bunga Merah merupakan kelompok pengolah dan pemasar hasil
-perikanan yang memanfaatkan sumber daya perikanan lokal sebagai bahan
-baku utama. Kelompok ini menghasilkan berbagai produk olahan yang
-memiliki nilai tambah dan daya saing di masyarakat.
+POKLAHSAR Bunga Merah merupakan kelompok pengolah dan
+pemasar hasil perikanan yang memanfaatkan sumber daya
+perikanan lokal sebagai bahan baku utama.
 </p>
 
 <table>
@@ -208,10 +297,9 @@ memiliki nilai tambah dan daya saing di masyarakat.
 <h2>🐟 POKLAHSAR SRIKANDI</h2>
 
 <p>
-POKLAHSAR Srikandi berfokus pada pengembangan produk olahan berbahan
-dasar belut. Produk yang dihasilkan memiliki kandungan gizi tinggi dan
-menjadi salah satu produk unggulan yang memberikan nilai tambah bagi
-masyarakat setempat.
+POKLAHSAR Srikandi berfokus pada pengembangan produk
+olahan berbahan dasar belut yang memiliki nilai ekonomi
+dan kandungan gizi tinggi.
 </p>
 
 <table>
@@ -237,10 +325,9 @@ masyarakat setempat.
 <h2>🌊 POKLAHSAR SUMBER REJEKI</h2>
 
 <p>
-POKLAHSAR Sumber Rejeki memanfaatkan berbagai jenis ikan air tawar yang
-tersedia di wilayah sekitar untuk diolah menjadi produk perikanan yang
-bernilai ekonomi lebih tinggi dan dapat meningkatkan pendapatan anggota
-kelompok.
+POKLAHSAR Sumber Rejeki memanfaatkan berbagai jenis ikan
+air tawar yang tersedia di wilayah sekitar untuk diolah
+menjadi produk perikanan yang bernilai ekonomi lebih tinggi.
 </p>
 
 <table>
@@ -266,10 +353,9 @@ kelompok.
 <h2>⭐ POKLAHSAR WAROH</h2>
 
 <p>
-POKLAHSAR Waroh mengembangkan produk berbasis rumput laut yang diolah
-menjadi berbagai jenis makanan ringan dan pangan olahan. Produk yang
-dihasilkan memiliki nilai ekonomi tinggi serta berpotensi menjadi
-produk khas daerah.
+POKLAHSAR Waroh mengembangkan produk berbasis rumput laut
+yang diolah menjadi berbagai jenis makanan ringan dan
+pangan olahan yang bernilai ekonomi tinggi.
 </p>
 
 <table>
@@ -293,6 +379,94 @@ Permen Rumput Laut, Kerupuk Rumput Laut
 
 </div>
 
+</div>
+
+<!-- FORM DAN DATA KOMODITAS -->
+
+<div class="card">
+
+<h2>
+<i class="fas fa-folder-open"></i>
+ Form dan Data Komoditas
+</h2>
+
+<div class="form-links">
+
+<div class="form-card">
+
+<h3>
+📝 Form Input Komoditas
+</h3>
+
+<p>
+Input data komoditas dan produk unggulan
+kelompok POKLAHSAR.
+</p>
+
+<a href="https://forms.gle/QCQC1rQRYhUH6oEt5"
+target="_blank"
+class="btn-form">
+
+Buka Form
+
+</a>
+
+</div>
+
+<div class="form-card">
+
+<h3>
+📊 Hasil Data Komoditas
+</h3>
+
+<p>
+Lihat hasil pengisian data komoditas
+kelompok POKLAHSAR.
+</p>
+
+<a href="https://docs.google.com/spreadsheets/d/15PHU5mdx6Z1io8OL32c-QDuni7qLjHGkbHuoMjDX_kE/edit?usp=sharing"
+target="_blank"
+class="btn-sheet">
+
+Lihat Data
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- DASHBOARD KOMODITAS -->
+
+<div class="card">
+
+<h2>
+<i class="fas fa-chart-pie"></i>
+ Dashboard Komoditas Perikanan
+</h2>
+
+<p>
+
+Visualisasi data komoditas utama, produk unggulan,
+dan sebaran komoditas pada kelompok POKLAHSAR
+yang ditampilkan secara interaktif melalui
+Looker Studio.
+
+</p>
+
+<iframe
+class="looker-container"
+src="https://datastudio.google.com/embed/reporting/be843967-632e-46e4-b2c9-3e02677fa022/page/page_12345"
+allowfullscreen>
+
+</iframe>
+
+</div>
+
+</div>
+
 <div class="footer">
 
 © 2026 Sistem Informasi POKLAHSAR |
@@ -300,5 +474,28 @@ Fakultas Perikanan dan Ilmu Kelautan
 
 </div>
 
+<script>
+
+function toggleKomoditas(){
+
+const content =
+document.getElementById("komoditasContent");
+
+const arrow =
+document.getElementById("arrowKomoditas");
+
+content.classList.toggle("show");
+
+if(content.classList.contains("show")){
+arrow.innerHTML = "▲";
+}else{
+arrow.innerHTML = "▼";
+}
+
+}
+
+</script>
+
 </body>
+
 </html>
