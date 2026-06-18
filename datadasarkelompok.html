@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 
 <meta charset="UTF-8">
@@ -60,15 +61,11 @@ transition:.3s;
 background:#f2f2f2;
 }
 
-/* CONTENT */
-
 .container{
 max-width:1200px;
 margin:30px auto;
 padding:0 20px;
 }
-
-/* CARD */
 
 .card{
 background:white;
@@ -76,11 +73,6 @@ border-radius:15px;
 padding:25px;
 margin-bottom:20px;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-3px);
 }
 
 .card h2{
@@ -90,7 +82,26 @@ padding-bottom:10px;
 border-bottom:2px solid #e5e5e5;
 }
 
-/* TABLE */
+.summary-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+}
+
+.summary-content{
+display:none;
+}
+
+.summary-content.show{
+display:block;
+}
+
+.arrow{
+font-size:22px;
+font-weight:bold;
+color:#0b5ed7;
+}
 
 table{
 width:100%;
@@ -109,7 +120,38 @@ color:#0b5ed7;
 background:#f8f9fa;
 }
 
-/* FOOTER */
+.form-links{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.form-card{
+background:#f8faff;
+border:2px solid #e0e8ff;
+border-radius:12px;
+padding:25px;
+text-align:center;
+}
+
+.btn-form,
+.btn-sheet{
+display:inline-block;
+padding:10px 20px;
+border-radius:8px;
+text-decoration:none;
+color:white;
+font-weight:600;
+margin-top:10px;
+}
+
+.btn-form{
+background:#0b5ed7;
+}
+
+.btn-sheet{
+background:#28a745;
+}
 
 .footer{
 margin-top:30px;
@@ -118,26 +160,6 @@ text-align:center;
 background:white;
 border-top:1px solid #ddd;
 color:#666;
-}
-
-@media(max-width:768px){
-
-.header h1{
-font-size:26px;
-}
-
-table,
-tbody,
-tr,
-td{
-display:block;
-width:100%;
-}
-
-td:first-child{
-margin-top:10px;
-}
-
 }
 
 </style>
@@ -150,7 +172,7 @@ margin-top:10px;
 
 <h1>
 <i class="fas fa-address-book"></i>
- Data Dasar Kelompok
+Data Dasar Kelompok
 </h1>
 
 <p>
@@ -159,12 +181,30 @@ Kelompok Pengolah dan Pemasar Hasil Perikanan
 
 <a href="index.html" class="back-btn">
 <i class="fas fa-arrow-left"></i>
- Kembali ke Menu
+Kembali ke Menu
 </a>
 
 </div>
 
 <div class="container">
+
+<div class="card">
+
+<div class="summary-header"
+onclick="toggleDataDasar()">
+
+<h2>
+📋 Data Dasar Kelompok
+</h2>
+
+<span id="arrow" class="arrow">
+▼
+</span>
+
+</div>
+
+<div id="dataDasarContent"
+class="summary-content">
 
 <!-- BUNGA MERAH -->
 
@@ -303,6 +343,60 @@ Kelompok Pengolah dan Pemasar Hasil Perikanan
 </div>
 
 </div>
+</div>
+
+<div class="card">
+
+<h2>
+<i class="fas fa-folder-open"></i>
+Form dan Data Dasar Kelompok
+</h2>
+
+<div class="form-links">
+
+<div class="form-card">
+
+<h3>
+📝 Form Input Data Dasar Kelompok
+</h3>
+
+<p>
+Input data dasar kelompok POKLAHSAR.
+</p>
+
+<a href="https://forms.gle/QCQC1rQRYhUH6oEt5"
+target="_blank"
+class="btn-form">
+
+Buka Form
+
+</a>
+
+</div>
+
+<div class="form-card">
+
+<h3>
+📊 Hasil Data Dasar Kelompok
+</h3>
+
+<p>
+Lihat hasil pengisian data dasar kelompok.
+</p>
+
+<a href="https://docs.google.com/spreadsheets/d/1fpfENk1sUgzKDmSeBWTzPMrBzOJ-n2nP9RVYVieTQZo/edit?usp=sharing"
+target="_blank"
+class="btn-sheet">
+
+Lihat Data
+
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 <div class="footer">
 
@@ -310,6 +404,28 @@ Kelompok Pengolah dan Pemasar Hasil Perikanan
 Fakultas Perikanan dan Ilmu Kelautan
 
 </div>
+
+<script>
+
+function toggleDataDasar(){
+
+const content =
+document.getElementById("dataDasarContent");
+
+const arrow =
+document.getElementById("arrow");
+
+content.classList.toggle("show");
+
+if(content.classList.contains("show")){
+arrow.innerHTML="▲";
+}else{
+arrow.innerHTML="▼";
+}
+
+}
+
+</script>
 
 </body>
 </html>
