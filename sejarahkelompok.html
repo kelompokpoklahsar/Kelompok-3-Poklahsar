@@ -25,24 +25,16 @@ background:#eef3fa;
 color:#333;
 }
 
-/* HEADER */
-
 .header{
 background:#0b5ed7;
 color:white;
 padding:35px 20px;
 text-align:center;
-box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
 .header h1{
 font-size:32px;
 margin-bottom:10px;
-}
-
-.header p{
-font-size:16px;
-opacity:.9;
 }
 
 .back-btn{
@@ -54,11 +46,6 @@ color:#0b5ed7;
 text-decoration:none;
 border-radius:8px;
 font-weight:600;
-transition:.3s;
-}
-
-.back-btn:hover{
-background:#f2f2f2;
 }
 
 .container{
@@ -73,24 +60,16 @@ padding:25px;
 border-radius:15px;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
 margin-bottom:20px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-3px);
 }
 
 .card h2{
 color:#0b5ed7;
 margin-bottom:15px;
-padding-bottom:10px;
-border-bottom:2px solid #e5e5e5;
 }
 
 .card p{
 line-height:1.8;
 text-align:justify;
-margin-bottom:10px;
 }
 
 .summary-header{
@@ -98,12 +77,6 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 cursor:pointer;
-}
-
-.summary-header span{
-font-size:22px;
-font-weight:bold;
-color:#0b5ed7;
 }
 
 .summary-content{
@@ -114,12 +87,17 @@ display:none;
 display:block;
 }
 
+.arrow{
+font-size:24px;
+font-weight:bold;
+color:#0b5ed7;
+}
+
 .looker-container{
 width:100%;
-height:750px;
+height:600px;
 border:none;
 border-radius:15px;
-margin-top:15px;
 }
 
 .footer{
@@ -129,22 +107,6 @@ background:white;
 margin-top:30px;
 border-top:1px solid #ddd;
 color:#666;
-}
-
-@media(max-width:768px){
-
-.header h1{
-font-size:26px;
-}
-
-.card{
-padding:20px;
-}
-
-.looker-container{
-height:500px;
-}
-
 }
 
 </style>
@@ -173,43 +135,23 @@ Kembali ke Menu
 
 <div class="container">
 
-<!-- PROFIL KELOMPOK -->
-
 <div class="card">
 
-<div class="summary-header" onclick="toggleProfil()">
+<div class="summary-header"
+onclick="toggleSejarah()">
 
 <h2>
-<i class="fas fa-users"></i>
-Profil Kelompok POKLAHSAR
+📖 Sejarah Kelompok
 </h2>
 
-<span id="arrowProfil">▼</span>
+<span id="arrow" class="arrow">
+▼
+</span>
 
 </div>
 
-<div id="profilKelompok" class="summary-content">
-
-<p>
-Kelompok Pengolah dan Pemasar Hasil Perikanan (POKLAHSAR)
-merupakan kelompok masyarakat yang bergerak dalam kegiatan
-pengolahan dan pemasaran hasil perikanan. Kelompok ini
-dibentuk sebagai wadah bagi masyarakat untuk meningkatkan
-keterampilan, produktivitas, dan kesejahteraan melalui
-pengembangan usaha berbasis hasil perikanan.
-</p>
-
-<p>
-Melalui kegiatan kelompok, anggota dapat bekerja sama dalam
-pengolahan produk, pemasaran hasil usaha, pengembangan
-administrasi kelompok, serta peningkatan kapasitas sumber
-daya manusia guna menciptakan usaha yang berkelanjutan dan
-berdaya saing.
-</p>
-
-</div>
-
-</div>
+<div id="sejarahContent"
+class="summary-content">
 
 <!-- BUNGA MERAH -->
 
@@ -293,7 +235,8 @@ produk dan kesejahteraan seluruh anggota.
 
 </div>
 
-<!-- DASHBOARD -->
+</div>
+</div>
 
 <div class="card">
 
@@ -303,8 +246,8 @@ Dashboard Sejarah Kelompok
 </h2>
 
 <p>
-Visualisasi profil, perkembangan, dan informasi kelompok
-POKLAHSAR yang ditampilkan melalui dashboard interaktif.
+Visualisasi sejarah dan profil kelompok
+POKLAHSAR melalui dashboard interaktif.
 </p>
 
 <iframe
@@ -326,20 +269,20 @@ Fakultas Perikanan dan Ilmu Kelautan
 
 <script>
 
-function toggleProfil(){
+function toggleSejarah(){
 
 const content =
-document.getElementById("profilKelompok");
+document.getElementById("sejarahContent");
 
 const arrow =
-document.getElementById("arrowProfil");
+document.getElementById("arrow");
 
 content.classList.toggle("show");
 
 if(content.classList.contains("show")){
-arrow.innerHTML = "▲";
+arrow.innerHTML="▲";
 }else{
-arrow.innerHTML = "▼";
+arrow.innerHTML="▼";
 }
 
 }
