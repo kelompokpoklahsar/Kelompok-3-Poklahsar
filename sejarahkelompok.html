@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sejarah Kelompok</title>
+<title>Sejarah Kelompok | POKLAHSAR</title>
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -60,15 +61,11 @@ transition:.3s;
 background:#f2f2f2;
 }
 
-/* CONTENT */
-
 .container{
 max-width:1100px;
 margin:30px auto;
 padding:0 20px;
 }
-
-/* CARD */
 
 .card{
 background:white;
@@ -96,7 +93,34 @@ text-align:justify;
 margin-bottom:10px;
 }
 
-/* FOOTER */
+.summary-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+}
+
+.summary-header span{
+font-size:22px;
+font-weight:bold;
+color:#0b5ed7;
+}
+
+.summary-content{
+display:none;
+}
+
+.summary-content.show{
+display:block;
+}
+
+.looker-container{
+width:100%;
+height:750px;
+border:none;
+border-radius:15px;
+margin-top:15px;
+}
 
 .footer{
 text-align:center;
@@ -107,8 +131,6 @@ border-top:1px solid #ddd;
 color:#666;
 }
 
-/* RESPONSIVE */
-
 @media(max-width:768px){
 
 .header h1{
@@ -117,6 +139,10 @@ font-size:26px;
 
 .card{
 padding:20px;
+}
+
+.looker-container{
+height:500px;
 }
 
 }
@@ -131,7 +157,7 @@ padding:20px;
 
 <h1>
 <i class="fas fa-book-open"></i>
- Sejarah Kelompok POKLAHSAR
+Sejarah Kelompok POKLAHSAR
 </h1>
 
 <p>
@@ -140,35 +166,69 @@ Kelompok Pengolah dan Pemasar Hasil Perikanan
 
 <a href="index.html" class="back-btn">
 <i class="fas fa-arrow-left"></i>
- Kembali ke Menu
+Kembali ke Menu
 </a>
 
 </div>
 
 <div class="container">
 
+<!-- PROFIL KELOMPOK -->
+
+<div class="card">
+
+<div class="summary-header" onclick="toggleProfil()">
+
+<h2>
+<i class="fas fa-users"></i>
+Profil Kelompok POKLAHSAR
+</h2>
+
+<span id="arrowProfil">▼</span>
+
+</div>
+
+<div id="profilKelompok" class="summary-content">
+
+<p>
+Kelompok Pengolah dan Pemasar Hasil Perikanan (POKLAHSAR)
+merupakan kelompok masyarakat yang bergerak dalam kegiatan
+pengolahan dan pemasaran hasil perikanan. Kelompok ini
+dibentuk sebagai wadah bagi masyarakat untuk meningkatkan
+keterampilan, produktivitas, dan kesejahteraan melalui
+pengembangan usaha berbasis hasil perikanan.
+</p>
+
+<p>
+Melalui kegiatan kelompok, anggota dapat bekerja sama dalam
+pengolahan produk, pemasaran hasil usaha, pengembangan
+administrasi kelompok, serta peningkatan kapasitas sumber
+daya manusia guna menciptakan usaha yang berkelanjutan dan
+berdaya saing.
+</p>
+
+</div>
+
+</div>
+
 <!-- BUNGA MERAH -->
 
 <div class="card">
 
-<h2>
-🌺 POKLAHSAR BUNGA MERAH
-</h2>
+<h2>🌺 POKLAHSAR BUNGA MERAH</h2>
 
 <p>
 Kelompok Pengolah dan Pemasar Hasil Perikanan (POKLAHSAR)
 Bunga Merah merupakan kelompok usaha yang bergerak dalam
-pengolahan dan pemasaran hasil perikanan. Kelompok ini
-dibentuk sebagai wadah bagi anggota untuk meningkatkan
-pendapatan, keterampilan, dan kesejahteraan melalui usaha
-pengolahan hasil perikanan.
+pengolahan dan pemasaran hasil perikanan sebagai upaya
+meningkatkan kesejahteraan anggota melalui kegiatan usaha
+yang produktif dan berkelanjutan.
 </p>
 
 <p>
-Dengan memanfaatkan potensi sumber daya perikanan yang
-tersedia, kelompok berupaya menghasilkan produk olahan
-berkualitas serta memperluas pemasaran produk sehingga
-memberikan nilai tambah bagi anggota kelompok.
+Kelompok ini aktif mengembangkan produk olahan perikanan,
+meningkatkan keterampilan anggota, serta memperluas jaringan
+pemasaran agar produk memiliki nilai tambah yang lebih baik.
 </p>
 
 </div>
@@ -177,21 +237,18 @@ memberikan nilai tambah bagi anggota kelompok.
 
 <div class="card">
 
-<h2>
-🐟 POKLAHSAR SRIKANDI
-</h2>
+<h2>🐟 POKLAHSAR SRIKANDI</h2>
 
 <p>
-POKLAHSAR Srikandi merupakan kelompok usaha pengolahan hasil
-perikanan yang dibentuk untuk mengembangkan keterampilan
-masyarakat dalam pengolahan produk perikanan.
+POKLAHSAR Srikandi dibentuk sebagai wadah pengembangan
+keterampilan pengolahan hasil perikanan yang bertujuan
+meningkatkan pendapatan dan kesejahteraan anggota kelompok.
 </p>
 
 <p>
-Kelompok ini menjadi wadah bagi anggota untuk bekerja sama,
-meningkatkan kapasitas usaha, serta memperkuat pemasaran
-produk hasil olahan sehingga mampu meningkatkan pendapatan
-keluarga dan kelompok.
+Melalui kerja sama dan penguatan kapasitas usaha, kelompok
+ini terus berupaya meningkatkan kualitas produk serta
+memperluas akses pemasaran hasil olahan perikanan.
 </p>
 
 </div>
@@ -200,20 +257,18 @@ keluarga dan kelompok.
 
 <div class="card">
 
-<h2>
-🌊 POKLAHSAR SUMBER REJEKI
-</h2>
+<h2>🌊 POKLAHSAR SUMBER REJEKI</h2>
 
 <p>
-POKLAHSAR Sumber Rejeki dibentuk sebagai sarana pengembangan
-usaha pengolahan dan pemasaran hasil perikanan yang berbasis
-pada potensi sumber daya lokal.
+POKLAHSAR Sumber Rejeki merupakan kelompok usaha yang
+mengembangkan pengolahan dan pemasaran hasil perikanan
+berbasis potensi sumber daya lokal.
 </p>
 
 <p>
-Melalui kegiatan kelompok, anggota dapat mengembangkan usaha
-secara bersama-sama, meningkatkan mutu produk, dan memperluas
-akses pasar untuk meningkatkan kesejahteraan anggota.
+Kelompok ini berkomitmen meningkatkan mutu produk,
+mengembangkan inovasi usaha, serta memperluas jangkauan
+pasar guna meningkatkan kesejahteraan anggota kelompok.
 </p>
 
 </div>
@@ -222,22 +277,41 @@ akses pasar untuk meningkatkan kesejahteraan anggota.
 
 <div class="card">
 
-<h2>
-⭐ POKLAHSAR WAROH
-</h2>
+<h2>⭐ POKLAHSAR WAROH</h2>
 
 <p>
 POKLAHSAR Waroh merupakan kelompok usaha pengolahan hasil
-perikanan yang beranggotakan masyarakat yang memiliki
-komitmen untuk mengembangkan usaha berbasis produk olahan
-perikanan.
+perikanan yang berfokus pada peningkatan kualitas produk,
+pengembangan usaha, dan pemasaran hasil olahan perikanan.
 </p>
 
 <p>
-Kelompok ini aktif dalam kegiatan produksi, pemasaran,
-pelatihan, dan pengembangan usaha guna meningkatkan kualitas
-produk serta daya saing usaha anggota kelompok.
+Melalui pelatihan, kerja sama kelompok, dan kegiatan usaha
+produktif, kelompok ini berupaya meningkatkan daya saing
+produk dan kesejahteraan seluruh anggota.
 </p>
+
+</div>
+
+<!-- DASHBOARD -->
+
+<div class="card">
+
+<h2>
+<i class="fas fa-chart-pie"></i>
+Dashboard Sejarah Kelompok
+</h2>
+
+<p>
+Visualisasi profil, perkembangan, dan informasi kelompok
+POKLAHSAR yang ditampilkan melalui dashboard interaktif.
+</p>
+
+<iframe
+class="looker-container"
+src="https://datastudio.google.com/embed/reporting/ffc0269d-59b1-43de-ab3d-6ce482bf5d34/page/page_12345"
+allowfullscreen>
+</iframe>
 
 </div>
 
@@ -249,6 +323,28 @@ produk serta daya saing usaha anggota kelompok.
 Fakultas Perikanan dan Ilmu Kelautan
 
 </div>
+
+<script>
+
+function toggleProfil(){
+
+const content =
+document.getElementById("profilKelompok");
+
+const arrow =
+document.getElementById("arrowProfil");
+
+content.classList.toggle("show");
+
+if(content.classList.contains("show")){
+arrow.innerHTML = "▲";
+}else{
+arrow.innerHTML = "▼";
+}
+
+}
+
+</script>
 
 </body>
 </html>
