@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rencana Usaha Kelompok (RUK)</title>
+<title>Sistem Informasi POKLAHSAR</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -22,6 +22,8 @@ background:#f4f7fc;
 display:flex;
 }
 
+/* ================= SIDEBAR ================= */
+
 .sidebar{
 width:280px;
 height:100vh;
@@ -35,6 +37,16 @@ color:white;
 padding:25px;
 text-align:center;
 border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.logo h2{
+font-size:24px;
+margin-bottom:5px;
+}
+
+.logo p{
+font-size:13px;
+opacity:.8;
 }
 
 .menu{
@@ -62,10 +74,28 @@ transition:.3s;
 background:rgba(255,255,255,.15);
 }
 
+.submenu{
+margin-left:15px;
+margin-top:5px;
+}
+
+.submenu a{
+display:block;
+font-size:14px;
+padding:10px;
+margin-bottom:4px;
+background:rgba(255,255,255,.08);
+border-radius:8px;
+}
+
+/* ================= MAIN ================= */
+
 .main{
 margin-left:280px;
 width:calc(100% - 280px);
 }
+
+/* ================= TOPBAR ================= */
 
 .topbar{
 background:white;
@@ -80,32 +110,48 @@ box-shadow:0 2px 10px rgba(0,0,0,.08);
 color:#2952cc;
 }
 
+/* ================= CONTENT ================= */
+
 .content{
 padding:25px;
 }
 
+/* ================= HERO ================= */
+
 .hero{
 background:white;
-padding:25px;
 border-radius:15px;
+overflow:hidden;
 box-shadow:0 4px 15px rgba(0,0,0,.08);
-margin-bottom:25px;
 }
 
-.hero h2{
+.hero img{
+width:100%;
+height:350px;
+object-fit:cover;
+}
+
+.hero-text{
+padding:25px;
+}
+
+.hero-text h2{
 color:#2952cc;
 margin-bottom:15px;
 }
 
-.hero p{
+.hero-text p{
+text-align:justify;
 line-height:1.8;
 color:#555;
-text-align:justify;
 }
 
+/* ================= CARD ================= */
+
 .cards{
+margin-top:25px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
@@ -115,6 +161,7 @@ padding:25px;
 border-radius:15px;
 box-shadow:0 4px 15px rgba(0,0,0,.08);
 transition:.3s;
+text-align:center;
 }
 
 .card:hover{
@@ -129,27 +176,29 @@ margin-bottom:15px;
 
 .card h3{
 margin-bottom:10px;
-color:#2952cc;
 }
 
-.card p{
-color:#555;
-line-height:1.6;
+/* ================= INFO ================= */
+
+.info{
+margin-top:25px;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.info h3{
+color:#2952cc;
 margin-bottom:15px;
 }
 
-.btn{
-display:inline-block;
-padding:10px 15px;
-background:#2952cc;
-color:white;
-text-decoration:none;
-border-radius:8px;
+.info ul{
+padding-left:20px;
+line-height:2;
 }
 
-.btn:hover{
-background:#1e3fa5;
-}
+/* ================= FOOTER ================= */
 
 .footer{
 text-align:center;
@@ -157,6 +206,8 @@ padding:20px;
 margin-top:25px;
 color:#666;
 }
+
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:768px){
 
@@ -193,11 +244,91 @@ flex-direction:column;
 
 <ul>
 
-<li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+<li><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
 
 <li><a href="#"><i class="fas fa-users"></i> Kelompok</a></li>
 
-<li><a href="#"><i class="fas fa-book"></i> Rencana Usaha Kelompok</a></li>
+<li>
+
+<a href="#"><i class="fas fa-book"></i> Buku</a>
+
+<div class="submenu">
+
+<a href="#">Data Anggota</a>
+
+<a href="#">Tamu Kelompok</a>
+
+<a href="#">Kas Kelompok</a>
+
+<a href="#">Produksi Kelompok</a>
+
+<a href="#">Notulen Rapat</a>
+
+<a href="halamantgsmandiri5.1.html">Rencana Usaha Kelompok (RUK)</a>
+
+<a href="#">Rencana Usaha Bersama (RUB)</a>
+
+<a href="#">Agenda</a>
+
+</div>
+
+</li>
+
+<li>
+<a href="#">
+<i class="fas fa-calendar-alt"></i>
+Rencana Kegiatan
+</a>
+</li>
+
+<li>
+<a href="#">
+<i class="fas fa-store"></i>
+Pola Pengolahan dan Pemasaran
+</a>
+</li>
+
+<li>
+<a href="#">
+<i class="fas fa-boxes"></i>
+Inventaris Barang
+</a>
+</li>
+
+<li>
+<a href="#">
+<i class="fas fa-people-group"></i>
+Pertemuan Kelompok
+</a>
+</li>
+
+<li>
+<a href="#">
+<i class="fas fa-wallet"></i>
+Iuran Kelompok
+</a>
+</li>
+
+<li>
+<a href="#">
+<i class="fas fa-money-bill-wave"></i>
+Pinjaman Anggota
+</a>
+</li>
+
+<li>
+<a href="#">
+<i class="fas fa-qrcode"></i>
+Kodifikasi Kelompok
+</a>
+</li>
+
+<li>
+<a href="#">
+<i class="fas fa-print"></i>
+Print Dokumen
+</a>
+</li>
 
 </ul>
 
@@ -209,7 +340,7 @@ flex-direction:column;
 
 <div class="topbar">
 
-<h2>Rencana Usaha Kelompok (RUK)</h2>
+<h2>Sistem Informasi POKLAHSAR</h2>
 
 <div>
 <i class="fas fa-user-circle"></i>
@@ -222,68 +353,34 @@ Administrator
 
 <div class="hero">
 
-<h2>Sistem Informasi Rencana Usaha Kelompok (RUK)</h2>
+<img src="fpik.jpeg" alt="Fakultas Perikanan dan Ilmu Kelautan">
+
+<div class="hero-text">
+
+<h2>Selamat Datang di Sistem Informasi POKLAHSAR</h2>
 
 <p>
-Halaman ini digunakan untuk mengakses Form Rencana Usaha Kelompok,
-Spreadsheet hasil pengisian, Form Tingkat Kepuasan, Dashboard Looker Studio,
-serta hasil analisis data yang digunakan dalam pengelolaan kelompok.
+POKLAHSAR (Kelompok Pengolah dan Pemasar Hasil Perikanan)
+merupakan kelompok masyarakat yang bergerak dalam kegiatan
+pengolahan hasil perikanan dan pemasaran produk perikanan
+guna meningkatkan nilai tambah produk, memperluas pemasaran,
+meningkatkan pendapatan usaha, serta mendukung kesejahteraan anggota kelompok.
+</p>
+
+<br>
+
+<p>
+Aplikasi ini dirancang untuk membantu dalam mengelola administrasi kelompok,
+data anggota, keuangan, produksi, inventaris, pertemuan, pemasaran,
+serta penyusunan dokumen usaha secara digital, cepat, dan terintegrasi.
 </p>
 
 </div>
-
-<div class="cards">
-
-<div class="card">
-<i class="fas fa-file-alt"></i>
-<h3>Form RUK</h3>
-<p>Pengisian data Rencana Usaha Kelompok.</p>
-<a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScdL-PtVAFB8rzr-pIwRlysh8Oi125YoQ5FxihYse7NunMYaw/viewform?embedded=true" target="_blank">Buka</a>
 </div>
+    <a href="index.html" class="home-btn">🏠 Home</a>
 
-<div class="card">
-<i class="fas fa-table"></i>
-<h3>Spreadsheet RUK</h3>
-<p>Hasil pengisian Form RUK.</p>
-<a class="btn" href="https://docs.google.com/spreadsheets/d/1odCmwZwFsJ3IGHZPfUqxQPN1ZAA58zffD0caewNilW0/edit?usp=sharing" target="_blank">Buka</a>
-</div>
+</body>
 
-<div class="card">
-<i class="fas fa-face-smile"></i>
-<h3>Form Kepuasan</h3>
-<p>Kuesioner tingkat kepuasan pengguna.</p>
-<a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdidF3o0GHK0gUJOhSe6kftFzwJkKnZC9IIAW7xwCic7B52ug/viewform?embedded=true" target="_blank">Buka</a>
-</div>
-
-<div class="card">
-<i class="fas fa-chart-bar"></i>
-<h3>Spreadsheet Kepuasan</h3>
-<p>Data hasil tingkat kepuasan.</p>
-<a class="btn" href="https://docs.google.com/spreadsheets/d/10T7gRd9Z2-cGP8rQ97-oAcLepfDXQcQkqqQoUtMT-UI/edit?usp=sharing" target="_blank">Buka</a>
-</div>
-
-<div class="card">
-<i class="fas fa-chart-line"></i>
-<h3>Looker Studio RUK</h3>
-<p>Dashboard visualisasi RUK.</p>
-<a class="btn" href="https://datastudio.google.com/reporting/0a93bc12-1dc2-4b54-9d41-26d325bf2d56" target="_blank">Buka</a>
-</div>
-
-<div class="card">
-<i class="fas fa-chart-pie"></i>
-<h3>Looker Studio Kepuasan</h3>
-<p>Dashboard visualisasi kepuasan.</p>
-<a class="btn" href="https://datastudio.google.com/reporting/e81388cb-1a77-424b-b00b-fb8b9524a29b" target="_blank">Buka</a>
-</div>
-
-<div class="card">
-<i class="fas fa-file-excel"></i>
-<h3>Analisis Data Excel</h3>
-<p>File analisis data hasil pengolahan.</p>
-<a class="btn" href="https://1drv.ms/x/c/0299b29105d939b3/IQBbIn41yrv-Sq4Z7Pd97utsAS6uhX_cKB0xwr-as4wAycg?e=ITsfTS" target="_blank">Download</a>
-</div>
-
-</div>
 
 <div class="footer">
 © 2026 Sistem Informasi POKLAHSAR | Fakultas Perikanan dan Ilmu Kelautan
