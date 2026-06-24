@@ -3,26 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Produksi Kelompok dan Pola Produksi POKLAHSAR</title>
-
+<title>Produksi Kelompok dan Pola Produksi</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Segoe UI',sans-serif;
 }
-
 body{
     background:#f4f7fc;
 }
-
-/* HEADER */
-
 header{
     background:#2952cc;
     color:white;
@@ -30,76 +22,65 @@ header{
     text-align:center;
     box-shadow:0 2px 10px rgba(0,0,0,.1);
 }
-
 header h1{
     font-size:30px;
     margin-bottom:8px;
 }
-
 header p{
     opacity:.9;
 }
-
-/* CONTAINER */
-
 .container{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
     padding:30px 20px;
 }
-
 .section-title{
     text-align:center;
     color:#2952cc;
     margin-bottom:30px;
     font-size:28px;
 }
-
-/* CARD */
-
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
 }
-
 .card{
     background:white;
     border-radius:15px;
     padding:25px;
     box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+.card:hover{
+    transform:translateY(-3px);
     transition:.3s;
 }
-
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 20px rgba(0,0,0,.12);
-}
-
 .card a{
     text-decoration:none;
     color:#333;
     display:block;
 }
-
 .card i{
     font-size:40px;
     color:#2952cc;
     margin-bottom:15px;
 }
-
 .card h3{
     color:#2952cc;
     margin-bottom:10px;
 }
-
 .card p{
     color:#666;
     line-height:1.6;
+    margin-bottom:20px;
 }
-
-/* INFO */
-
+.preview{
+    width:100%;
+    height:500px;
+    border:none;
+    border-radius:12px;
+    background:#fff;
+}
 .info{
     background:white;
     margin-top:35px;
@@ -107,20 +88,15 @@ header p{
     border-radius:15px;
     box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
-
 .info h2{
     color:#2952cc;
     margin-bottom:15px;
 }
-
 .info p{
     text-align:justify;
     line-height:1.8;
     color:#555;
 }
-
-/* FOOTER */
-
 footer{
     margin-top:40px;
     background:#2952cc;
@@ -128,134 +104,118 @@ footer{
     text-align:center;
     padding:18px;
 }
-
 @media(max-width:768px){
-
     header h1{
         font-size:24px;
     }
-
     .section-title{
         font-size:22px;
     }
-
+    .preview{
+        height:350px;
+    }
 }
-
 </style>
 </head>
-
 <body>
-
 <header>
     <h1><i class="fas fa-chart-line"></i> Produksi Kelompok dan Pola Produksi POKLAHSAR</h1>
     <p>Sistem Informasi Kelompok Pengolah dan Pemasar Hasil Perikanan</p>
 </header>
-
 <div class="container">
-
     <h2 class="section-title">Menu Data dan Analisis</h2>
-
     <div class="cards">
-
+        <!-- FORM PRODUKSI -->
         <div class="card">
             <a href="https://forms.gle/oV7dTiLhVDnTCwR48" target="_blank">
                 <i class="fas fa-user-plus"></i>
                 <h3>Pendataan Produksi Kelompok dan Pola Produksi</h3>
-                <p>Google Form Pendataan Produksi Kelompok dan Pola Produksi POKLAHSAR</p>
+                <p>Google Form Pendataan Produksi Kelompok dan Pola Produksi</p>
             </a>
+            <iframe class="preview"
+            src="https://forms.gle/oV7dTiLhVDnTCwR48">
+            </iframe>
         </div>
-
+        <!-- SPREADSHEET PRODUKSI -->
         <div class="card">
             <a href="https://docs.google.com/spreadsheets/d/1r74FvLkTN2jKmePJsqB8o8wymDelmck2EzzdL-NLQng/edit?usp=sharing" target="_blank">
                 <i class="fas fa-file-excel"></i>
-                <h3>Spreadsheet Pendataan Produksi Kelompok dan Pola Produksi</h3>
-                <p>Data hasil Produksi Kelompok dan Pola Produksi POKLAHSAR</p>
+                <h3>Spreadsheet Produksi Kelompok</h3>
+                <p>Data hasil Produksi Kelompok dan Pola Produksi</p>
             </a>
+            <iframe class="preview"
+            src="https://docs.google.com/spreadsheets/d/1r74FvLkTN2jKmePJsqB8o8wymDelmck2EzzdL-NLQng/preview">
+            </iframe>
         </div>
-
-          <!-- DASHBOARD PENDATAAN PRODUKSI KELOMPOK dan POLA PRODUKSI -->
-
-<div class="dashboard-card">
-
-    <h2>
-        <i class="fas fa-chart-pie"></i>
-        Dashboard Pendataan Produksi dan Pola Produksi
-    </h2>
-
-    <p>
-        Visualisasi Data Produksi Kelompok dan Pola Produksi melalui Looker Studio
-    </p>
-
-    <iframe
-        class="dashboard-container"
-        src="https://datastudio.google.com/embed/reporting/1969eea2-1d54-43ca-b238-3fa19d1fb5b6/page/page_12345"
-        allowfullscreen>
-    </iframe>
-
-</div>
-
+        <!-- DASHBOARD PRODUKSI -->
+        <div class="card">
+            <a href="https://datastudio.google.com/embed/reporting/1969eea2-1d54-43ca-b238-3fa19d1fb5b6/page/page_12345" target="_blank">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Dashboard Produksi Kelompok dan Pola Produksi</h3>
+                <p>Visualisasi data produksi dan pola produksi melalui Looker Studio</p>
+            </a>
+            <iframe class="preview"
+            src="https://datastudio.google.com/embed/reporting/1969eea2-1d54-43ca-b238-3fa19d1fb5b6/page/page_12345">
+            </iframe>
+        </div>
+        <!-- FORM KEPUASAN -->
         <div class="card">
             <a href="https://forms.gle/kaVVy3EbeY136JFL8" target="_blank">
                 <i class="fas fa-star"></i>
                 <h3>Survei Kepuasan</h3>
                 <p>Form tingkat kepuasan terhadap fitur produksi kelompok dan pola produksi</p>
             </a>
+            <iframe class="preview"
+            src="https://forms.gle/kaVVy3EbeY136JFL8">
+            </iframe>
         </div>
-
+        <!-- SPREADSHEET KEPUASAN -->
         <div class="card">
             <a href="https://docs.google.com/spreadsheets/d/1ndY4roc9JOvodIEFsk_odHkzx8O_cu9HH6SC8QUNk8I/edit?usp=sharing" target="_blank">
                 <i class="fas fa-table"></i>
                 <h3>Spreadsheet Kepuasan</h3>
-                <p>Data hasil pengisian survei kepuasan pengguna fitur produksi</p>
+                <p>Data hasil survei kepuasan pengguna</p>
             </a>
+            <iframe class="preview"
+            src="https://docs.google.com/spreadsheets/d/1ndY4roc9JOvodIEFsk_odHkzx8O_cu9HH6SC8QUNk8I/preview">
+            </iframe>
         </div>
-
         <!-- DASHBOARD KEPUASAN -->
-
-<div class="dashboard-card">
-
-    <h2>
-        <i class="fas fa-chart-pie"></i>
-        Dashboard Kepuasan Pengguna Fitur
-    </h2>
-
-    <p>
-        Visualisasi hasil survei kepuasan pengguna fitur Produksi Kelompok dan Pola Produksi melalui Looker Studio
-    </p>
-
-    <iframe
-        class="dashboard-container"
-        src="https://datastudio.google.com/embed/reporting/98467286-ecd8-4b04-a8c3-639013e1b703/page/page_12345"
-        allowfullscreen>
-    </iframe>
-
-</div>
-
+        <div class="card">
+            <a href="https://datastudio.google.com/embed/reporting/98467286-ecd8-4b04-a8c3-639013e1b703/page/page_12345" target="_blank">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Dashboard Kepuasan Pengguna</h3>
+                <p>Visualisasi hasil survei kepuasan melalui Looker Studio</p>
+            </a>
+            <iframe class="preview"
+            src="https://datastudio.google.com/embed/reporting/98467286-ecd8-4b04-a8c3-639013e1b703/page/page_12345">
+            </iframe>
+        </div>
+        <!-- HASIL ANALISIS -->
         <div class="card">
             <a href="https://docs.google.com/spreadsheets/d/1pG_xrXT7G173-WGYoHxZETTmldTI07H7/edit?usp=sharing&ouid=106290971886669413802&rtpof=true&sd=true" target="_blank">
                 <i class="fas fa-file-lines"></i>
                 <h3>Hasil Analisis Keseluruhan</h3>
-                <p>Rekapitulasi dan hasil analisis seluruh data penelitian.</p>
+                <p>Rekapitulasi dan hasil analisis seluruh data</p>
             </a>
+            <iframe class="preview"
+            src="https://docs.google.com/spreadsheets/d/1pG_xrXT7G173-WGYoHxZETTmldTI07H7/preview">
+            </iframe>
         </div>
-
     </div>
-
     <div class="info">
         <h2>Tentang Sistem</h2>
         <p>
             Halaman ini digunakan untuk mendukung kegiatan Produksi Kelompok dan Pola Produksi POKLAHSAR
             melalui pengelolaan data pendaftaran anggota, survei kepuasan, penyimpanan data spreadsheet,
-            serta visualisasi hasil analisis menggunakan Looker Studio. Sistem ini membantu proses
-            administrasi dan evaluasi kegiatan secara digital, cepat, dan terintegrasi.
+            serta visualisasi hasil analisis menggunakan Looker Studio.
+            Sistem ini membantu proses administrasi dan evaluasi kegiatan secara digital,
+            cepat, dan terintegrasi.
         </p>
     </div>
-
 </div>
-
 <footer>
-    © 2026 Khaila Nazila Shofa 
+    © 2026 Khaila Nazila Shofa
 </footer>
-
 </body>
 </html>
