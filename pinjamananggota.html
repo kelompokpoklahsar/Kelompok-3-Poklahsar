@@ -211,7 +211,6 @@ table tbody tr:hover {
 </style>
 </head>
 <body>
-
 <!-- SIDEBAR -->
 <div class="sidebar">
     <div class="logo">
@@ -234,11 +233,11 @@ table tbody tr:hover {
             <i class="fas fa-user-circle"></i> Administrator
         </div>
     </div>
-    
+   
     <div class="content">
-       
+      
         <h2 class="section-title"><i class="fas fa-link"></i> Integrasi Data Simpan Pinjam</h2>
-       
+      
         <!-- KUMPULAN CARD -->
         <div class="grid-container">
             <div class="data-card">
@@ -248,7 +247,6 @@ table tbody tr:hover {
                     <a href="https://forms.gle/imo1GiGigmeRYMRx7" target="_blank" class="btn"><i class="fab fa-google"></i> Buka Google Form</a>
                 </div>
             </div>
-
             <div class="data-card">
                 <h3><i class="fas fa-file-excel"></i> Data Pendaftaran</h3>
                 <p style="margin-bottom: 15px; font-size: 14px; color: #666;">Rekapitulasi data pendaftaran anggota.</p>
@@ -256,7 +254,6 @@ table tbody tr:hover {
                     <a href="https://docs.google.com/spreadsheets/d/1FMH7tZtv_UDW9A8NihRsRoIG6l2RB_gsxK6vAYTnuyA/edit?usp=sharing" target="_blank" class="btn btn-excel"><i class="fas fa-table"></i> Lihat Spreadsheet</a>
                 </div>
             </div>
-
             <div class="data-card">
                 <h3><i class="fas fa-chart-bar"></i> Dashboard Pendaftaran</h3>
                 <p style="margin-bottom: 15px; font-size: 14px; color: #666;">Visualisasi data pendaftaran.</p>
@@ -264,7 +261,6 @@ table tbody tr:hover {
                     <a href="https://datastudio.google.com/embed/reporting/4e530b75-807b-45ad-b1c1-61998a520280/page/page_12345" target="_blank" class="btn btn-looker"><i class="fas fa-chart-line"></i> Buka Looker Studio</a>
                 </div>
             </div>
-
             <div class="data-card">
                 <h3><i class="fas fa-star"></i> Survey Kepuasan</h3>
                 <p style="margin-bottom: 15px; font-size: 14px; color: #666;">Evaluasi kepuasan layanan simpan pinjam.</p>
@@ -272,7 +268,6 @@ table tbody tr:hover {
                     <a href="https://forms.gle/jDrarFrtbcEn9kAc9" target="_blank" class="btn"><i class="fab fa-google"></i> Buka Google Form</a>
                 </div>
             </div>
-
             <div class="data-card">
                 <h3><i class="fas fa-table"></i> Data Survey Kepuasan</h3>
                 <p style="margin-bottom: 15px; font-size: 14px; color: #666;">Hasil survey kepuasan anggota.</p>
@@ -280,7 +275,6 @@ table tbody tr:hover {
                     <a href="https://docs.google.com/spreadsheets/d/15VXtdYKqxzrwvmAMjjYeTardwSK3BtnH74FnkrKn4K8/edit?usp=sharing" target="_blank" class="btn btn-excel"><i class="fas fa-table"></i> Lihat Spreadsheet</a>
                 </div>
             </div>
-
             <div class="data-card">
                 <h3><i class="fas fa-chart-pie"></i> Dashboard Kepuasan</h3>
                 <p style="margin-bottom: 15px; font-size: 14px; color: #666;">Visualisasi hasil survey kepuasan.</p>
@@ -288,12 +282,14 @@ table tbody tr:hover {
                     <a href="https://datastudio.google.com/reporting/355c4ec4-cc48-4598-b9c4-e5311d4aa93e" target="_blank" class="btn btn-looker"><i class="fas fa-chart-line"></i> Buka Looker Studio</a>
                 </div>
             </div>
-
+            <!-- TOMBOL HASIL ANALISIS DENGAN DOWNLOAD OTOMATIS -->
             <div class="data-card">
                 <h3><i class="fas fa-file-lines"></i> Hasil Analisis</h3>
                 <p style="margin-bottom: 15px; font-size: 14px; color: #666;">Rekapitulasi dan analisis keseluruhan.</p>
                 <div class="btn-group">
-                    <a href="https://docs.google.com/spreadsheets/d/1fiwfP9m6EPaaA5MUommdlJjq8MmTcdPS/edit?usp=sharing" target="_blank" class="btn btn-excel"><i class="fas fa-file-excel"></i> Lihat Analisis</a>
+                    <button onclick="downloadExcel()" class="btn btn-excel">
+                        <i class="fas fa-download"></i> Download Hasil Analisis (Excel)
+                    </button>
                 </div>
             </div>
         </div>
@@ -309,21 +305,24 @@ table tbody tr:hover {
                     <i class="fas fa-laugh-beam"></i> Dashboard Kepuasan
                 </button>
             </div>
-            
+           
             <div id="dashboard-pendaftaran" class="tab-content">
                 <div class="iframe-wrapper">
                     <iframe src="https://datastudio.google.com/embed/reporting/958da6ce-f8ef-4028-8a8f-e8a3c888e019/page/page_12345" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
-            
+           
             <div id="dashboard-kepuasan" class="tab-content" style="display: none;">
                 <div class="iframe-wrapper">
                     <iframe src="https://datastudio.google.com/embed/reporting/e98456ca-4418-4023-a552-65bccc12337a/page/page_12345" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
 <script>
+// Fungsi Switch Dashboard (sudah ada sebelumnya)
 function switchDashboard(evt, dashboardId) {
     document.querySelectorAll(".tab-content").forEach(content => {
         content.style.display = "none";
@@ -333,6 +332,19 @@ function switchDashboard(evt, dashboardId) {
     });
     document.getElementById(dashboardId).style.display = "block";
     evt.currentTarget.classList.add("active");
+}
+
+// Fungsi Download Excel Otomatis
+function downloadExcel() {
+    const url = "https://docs.google.com/spreadsheets/d/1fiwfP9m6EPaaA5MUommdlJjq8MmTcdPS/export?format=xlsx";
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = "Hasil_Analisis_Simpan_Pinjam_POKLAHSAR.xlsx";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    alert("✅ File Excel sedang didownload...");
 }
 </script>
 </body>
