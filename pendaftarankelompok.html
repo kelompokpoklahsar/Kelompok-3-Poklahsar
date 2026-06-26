@@ -1,1 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pendaftaran Kelompok | POKLAHSAR</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#eef3fa;
+display:flex;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:280px;
+height:100vh;
+background:linear-gradient(180deg,#0b5ed7,#084298);
+color:white;
+position:fixed;
+overflow-y:auto;
+}
+
+.logo{
+padding:25px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.logo h2{
+font-size:26px;
+margin-bottom:5px;
+}
+
+.logo p{
+font-size:13px;
+line-height:1.5;
+opacity:.9;
+}
+
+.back-menu{
+padding:15px;
+}
+
+.back-menu a{
+display:flex;
+align-items:center;
+gap:12px;
+background:rgba(255,255,255,.15);
+padding:14px 18px;
+border-radius:12px;
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.back-menu a:hover{
+background:rgba(255,255,255,.25);
+}
+
+/* MAIN */
+
+.main{
+margin-left:280px;
+width:calc(100% - 280px);
+min-height:100vh;
+}
+
+.topbar{
+background:white;
+padding:18px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.topbar h2{
+color:#0b5ed7;
+font-size:28px;
+}
+
+.topbar-user{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:15px;
+font-weight:600;
+color:#333;
+}
+
+.topbar-user i{
+font-size:24px;
+color:#0b5ed7;
+}
+
+.content{
+padding:25px;
+width:100%;
+}
+
+.page-header{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+margin-bottom:25px;
+}
+
+.page-header h2{
+font-size:32px;
+color:#0b5ed7;
+margin-bottom:10px;
+}
+
+.page-header p{
+color:#666;
+line-height:1.8;
+}
+
+/* CARD */
+
+.card{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+margin-bottom:25px;
+width:100%;
+}
+
+.card h3{
+color:#0b5ed7;
+margin-bottom:20px;
+font-size:26px;
+}
+
+/* FORM CARD */
+
+.form-links{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.form-card{
+background:#f8faff;
+border:2px solid #dbe6ff;
+border-radius:15px;
+padding:25px;
+text-align:center;
+transition:.3s;
+}
+
+.form-card:hover{
+transform:translateY(-5px);
+}
+
+.form-card h4{
+font-size:22px;
+color:#0b5ed7;
+margin-bottom:15px;
+}
+
+.form-card p{
+line-height:1.8;
+color:#666;
+margin-bottom:20px;
+}
+
+.btn-form,
+.btn-sheet{
+display:inline-block;
+padding:12px 24px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+color:white;
+}
+
+.btn-form{
+background:#0b5ed7;
+}
+
+.btn-sheet{
+background:#28a745;
+}
+
+/* DASHBOARD */
+
+.looker-container{
+width:100%;
+height:750px;
+border:none;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.sidebar{
+width:100%;
+height:auto;
+position:relative;
+}
+
+.main{
+margin-left:0;
+width:100%;
+}
+
+.topbar{
+flex-direction:column;
+gap:10px;
+text-align:center;
+}
+
+.form-links{
+grid-template-columns:1fr;
+}
+
+.looker-container{
+height:500px;
+}
+
+}
+
+.footer{
+text-align:center;
+padding:20px;
+color:#666;
+font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+<h2>POKLAHSAR</h2>
+<p>
+Kelompok Pengolah dan Pemasar Hasil Perikanan
+</p>
+</div>
+
+<div class="back-menu">
+<a href="index.html">
+<i class="fas fa-arrow-left"></i>
+<span>Kembali ke Menu</span>
+</a>
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="topbar">
+
+<h2>Pendaftaran Kelompok</h2>
+
+<div class="topbar-user">
+<i class="fas fa-user-circle"></i>
+<span>Kelompok 3</span>
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="page-header">
+
+<h2>
+📋 Pendaftaran Kelompok
+</h2>
+
+<p>
+Halaman ini digunakan untuk melakukan pendaftaran kelompok POKLAHSAR. Setelah berhasil mendaftar, kelompok akan memperoleh Token Kelompok yang digunakan untuk pengisian seluruh menu pada Sistem Informasi POKLAHSAR.
+</p>
+
+</div>
+
+<!-- DATA KELOMPOK -->
+
+<div class="card">
+
+<h3>
+<i class="fas fa-folder-open"></i>
+ Pendaftaran Kelompok
+</h3>
+
+<div class="form-links">
+
+<div class="form-card">
+
+<h4>
+<i class="fas fa-file-signature"></i>
+ Form Pendaftaran Kelompok
+</h4>
+
+<p>
+Input data kelompok, anggota,
+dan komoditas perikanan melalui
+Google Form.
+</p>
+
+<a href="https://forms.gle/BERdo7qnorpL2UPa6"
+class="btn-form"
+target="_blank">
+
+<i class="fas fa-external-link-alt"></i>
+ Buka Form
+
+</a>
+
+</div>
+
+<div class="form-card">
+
+<h4>
+<i class="fas fa-table"></i>
+ Hasil Data Kelompok
+</h4>
+
+<p>
+Lihat seluruh hasil pengisian
+formulir kelompok yang tersimpan
+pada Google Spreadsheet.
+</p>
+
+<a href="https://docs.google.com/spreadsheets/d/1od7JDL2xUDYi2mC7wpRmHeIxsXiszowYWV-GC2e4xYg/edit?usp=drivesdk"
+class="btn-sheet"
+target="_blank">
+
+<i class="fas fa-table"></i>
+ Lihat Data
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- DASHBOARD DATA KELOMPOK -->
+
+<div class="card">
+
+<h3>
+<i class="fas fa-chart-pie"></i>
+ Dashboard Data Kelompok
+</h3>
+
+<p style="margin-bottom:20px;color:#666;line-height:1.8;">
+
+Visualisasi data kelompok, anggota,
+dan komoditas perikanan POKLAHSAR
+yang ditampilkan secara interaktif
+melalui Looker Studio.
+
+</p>
+
+<iframe
+class="looker-container"
+src="https://datastudio.google.com/embed/reporting/54d35035-a75c-4150-a2d7-34a77a6f6c4c/page/page_12345"
+allowfullscreen>
+
+</iframe>
+
+</div>
+
+<div class="footer">
+
+© 2026 Sistem Informasi POKLAHSAR |
+Fakultas Perikanan dan Ilmu Kelautan
+
+</div>
+
+</div>
+
+</body>
+
+</html>
 
